@@ -15,7 +15,7 @@ import Image from "next/image";
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import WorkIcon from '@mui/icons-material/Work';
 import DetailsofFlight from "./DetailsofFlight";
-export default function FlightItem({type}) {
+export default function FlightItem({ type, onClick, flightDetails }) {
         const [age, setAge] = useState('');
         const handleChange = (event) => {
           setAge(event.target.value);
@@ -35,7 +35,7 @@ export default function FlightItem({type}) {
               </Typography>
               </Box>
               <Box sx={{width:'32%',paddingLeft:'16px',}}>
-              <Typography variant="h3" sx={{fontFamily:'PTRootUIWebRegular',fontSize:'38px',color:'secondary.main',marginBlock:'8px'}}>
+              <Typography variant="h3" sx={{fontFamily:'PTRootUIWebRegular',fontSize:'30px',color:'secondary.main',marginBlock:'8px'}}>
                   DAC
               </Typography>
               <Typography variant="body2" sx={{fontFamily:'PTRootUIWebBold',fontSize:'12px',color:'secondary.dark'}}>
@@ -70,7 +70,7 @@ export default function FlightItem({type}) {
           
               </Box>
               <Box sx={{width:'32%',paddingLeft:'16px',}}>
-              <Typography variant="h3" sx={{fontFamily:'PTRootUIWebRegular',fontSize:'38px',color:'secondary.main',marginBlock:'8px'}}>
+              <Typography variant="h3" sx={{fontFamily:'PTRootUIWebRegular',fontSize:'30px',color:'secondary.main',marginBlock:'8px'}}>
                   CXB
               </Typography>
               <Typography variant="body2" sx={{fontFamily:'PTRootUIWebBold',fontSize:'12px',color:'secondary.dark'}}>
@@ -128,7 +128,7 @@ export default function FlightItem({type}) {
                         left: 0,
                         zIndex: 1,
                       },}}>
-          <Typography variant="h3" sx={{fontFamily:'PTRootUIWebRegular',fontSize:'38px',color:'secondary.main',marginTop:'8px',textAlign:'right'}}>
+          <Typography variant="h3" sx={{fontFamily:'PTRootUIWebRegular',fontSize:'30px',color:'secondary.main',marginTop:'8px',textAlign:'right'}}>
               ৳ 11,280
           </Typography>
           <Typography variant="body2" sx={{fontFamily:'PTRootUIWebRegular',fontSize:'14px',textDecoration:'line-through',color:'secondary.main',textAlign:'right'}}>
@@ -136,7 +136,7 @@ export default function FlightItem({type}) {
           </Typography>
           <Box sx={{textAlign:'center',paddingBlock:'20px'}}>
             <Button sx={{textAlign:"center",borderRadius:'50px',fontFamily:'PTRootUIWebMedium',bgcolor:'secondary.dark',fontSize:'12px',cursor:'pointer',zIndex:'9'}} variant="contained">Book Now</Button>
-            <Button sx={{textAlign:"center",color:'secondary.dark',fontFamily:'PTRootUIWebMedium',paddingTop:'10px',fontSize:'12px',cursor:'pointer',zIndex:'9'}} variant="text">Fight Details <ArrowRightIcon /></Button>
+            <Button onClick={() => onClick(flightDetails)} sx={{textAlign:"center",color:'secondary.dark',fontFamily:'PTRootUIWebMedium',paddingTop:'10px',fontSize:'12px',cursor:'pointer',zIndex:'9'}} variant="text">Fight Details <ArrowRightIcon /></Button>
           </Box>
           </Box>
         </Stack>

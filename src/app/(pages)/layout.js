@@ -7,6 +7,8 @@ import Footer from "../components/Footer";
 import { ThemeProvider } from "@mui/material";
 import theme from "../theme/theme";
 import 'swiper/css';
+import { Provider } from "react-redux";
+import { store } from "../store";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -26,11 +28,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
           <body className={`${geistSans.variable} ${geistMono.variable}`}>
+            <Provider store={store} >
             <ThemeProvider theme={theme}>
                   <Header/>
                   {children}
                   <Footer/>
             </ThemeProvider>
+            </Provider>
           </body>
     </html>
   );

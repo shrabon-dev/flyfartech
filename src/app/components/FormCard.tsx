@@ -82,7 +82,7 @@ export default function FormCard({panelType}) {
                         <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
                             DISTINATION
                         </Typography>
-                        <Typography variant="h3" sx={{fontWeight:'bold',textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'38px',color:'secondary.main',marginBlock:'8px'}}>
+                        <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:'24px',color:'secondary.main',marginBlock:'8px'}}>
                             DHAKA
                         </Typography>
                         <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px'}}>
@@ -132,7 +132,7 @@ export default function FormCard({panelType}) {
                             <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
                                 CHECK IN
                             </Typography>
-                            <Typography variant="h3" sx={{fontWeight:'bold',textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'38px',color:'secondary.main',marginBlock:'8px'}}>
+                            <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:'24px',color:'secondary.main',marginBlock:'8px'}}>
                                 24 April 2025
                             </Typography>
                             <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px',marginTop:'8px'}}>
@@ -182,7 +182,7 @@ export default function FormCard({panelType}) {
                             <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
                                 CHECK OUT
                             </Typography>
-                            <Typography variant="h3" sx={{fontWeight:'bold',textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'38px',color:'secondary.main',marginBlock:'8px'}}>
+                            <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:'24px',color:'secondary.main',marginBlock:'8px'}}>
                                 24 April 2025
                             </Typography>
                             <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px',marginTop:'8px'}}>
@@ -239,7 +239,7 @@ export default function FormCard({panelType}) {
                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
                            DESTINATION TYPE
                            </Typography>
-                           <Typography variant="h3" sx={{fontWeight:'bold',textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'38px',color:'secondary.main',marginBlock:'8px'}}>
+                           <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:'24px',color:'secondary.main',marginBlock:'8px'}}>
                            International
                            </Typography>
                            <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px'}}>
@@ -289,7 +289,7 @@ export default function FormCard({panelType}) {
                                <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
                                 WHERE?
                                </Typography>
-                               <Typography variant="h3" sx={{fontWeight:'bold',textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'38px',color:'secondary.main',marginBlock:'8px'}}>
+                               <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:'24px',color:'secondary.main',marginBlock:'8px'}}>
                                Rome,Vasnis
                                </Typography>
                                <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px'}}>
@@ -338,7 +338,7 @@ export default function FormCard({panelType}) {
                                <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
                                WHEN?
                                </Typography>
-                               <Typography variant="h3" sx={{fontWeight:'bold',textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'38px',color:'secondary.main',marginBlock:'8px'}}>
+                               <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:'24px',color:'secondary.main',marginBlock:'8px'}}>
                                    24 April 2025
                                </Typography>
                                <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px',marginTop:'8px'}}>
@@ -390,60 +390,59 @@ export default function FormCard({panelType}) {
                             {panelType == 'VISA' ?
                             <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
                             <Box sx={{width:'45%'}}>
-                           <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
-                           Destination city or country
-                           </Typography>
-                           <Typography variant="h3" sx={{fontWeight:'bold',textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'38px',color:'secondary.main',marginBlock:'8px'}}>
-                           USA
-                           </Typography>
-                           <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px'}}>
-                               <Box sx={{bgcolor:'secondary.main',color:'white',height:'30px',width:'30px',padding:'2px',borderTopLeftRadius:'4px',borderBottomLeftRadius:'4px'}}><TravelExploreOutlinedIcon /></Box>
-                               <FormControl fullWidth sx={{ position: 'relative',height:'30px',zIndex:9999 }}>
-                                   <Select
-                                   value={fromLocation}
-                                   onChange={handleLChange}
-                                   displayEmpty
-                                   input={<OutlinedInput   notched={false} />}
-                                   sx={{
-                                       backgroundColor: 'secondary.light',
-                                       borderTopRightRadius:'4px',borderBottomRightRadius:'4px',
-                                       borderTopLeftRadius:'0px',borderBottomLeftRadius:'0px',
-                                       padding: '4px',
-                                       fontFamily: 'PTRootUIWebRegular',
-                                       fontSize: '14px',
-                                       height: '30px',
-                                       textTransform: 'capitalize',
-                                       '& .MuiOutlinedInput-notchedOutline': {
-                                       border: 'none',
-                                       },
-                                       '&:hover .MuiOutlinedInput-notchedOutline': {
-                                       border: 'none',
-                                       },
-                                       '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                                       border: 'none',
-                                       },
-                                   }}
-                                   renderValue={(selected) => {
-                                       if (!selected) {
-                                       return <>ShaJalal</>;
-                                       }
-                                   
-                                       return selected;
-                                   }}
-                                   >
-                                   <MenuItem value={10}>Ten</MenuItem>
-                                   <MenuItem value={20}>Twenty</MenuItem>
-                                   <MenuItem value={30}>Thirty</MenuItem>
-                               </Select>
-                               </FormControl>
-                           </Box>
-                       
+                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
+                            Destination city or country
+                            </Typography>
+                            <Typography variant="h3" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'28px',color:'secondary.main',marginBlock:'8px'}}>
+                            USA
+                            </Typography>
+                            <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px'}}>
+                                <Box sx={{bgcolor:'secondary.main',color:'white',height:'30px',width:'30px',padding:'2px',borderTopLeftRadius:'4px',borderBottomLeftRadius:'4px'}}><TravelExploreOutlinedIcon /></Box>
+                                <FormControl fullWidth sx={{ position: 'relative',height:'30px',zIndex:9999 }}>
+                                    <Select
+                                    value={fromLocation}
+                                    onChange={handleLChange}
+                                    displayEmpty
+                                    input={<OutlinedInput   notched={false} />}
+                                    sx={{
+                                        backgroundColor: 'secondary.light',
+                                        borderTopRightRadius:'4px',borderBottomRightRadius:'4px',
+                                        borderTopLeftRadius:'0px',borderBottomLeftRadius:'0px',
+                                        padding: '4px',
+                                        fontFamily: 'PTRootUIWebRegular',
+                                        fontSize: '14px',
+                                        height: '30px',
+                                        textTransform: 'capitalize',
+                                        '& .MuiOutlinedInput-notchedOutline': {
+                                        border: 'none',
+                                        },
+                                        '&:hover .MuiOutlinedInput-notchedOutline': {
+                                        border: 'none',
+                                        },
+                                        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                        border: 'none',
+                                        },
+                                    }}
+                                    renderValue={(selected) => {
+                                        if (!selected) {
+                                        return <>ShaJalal</>;
+                                        }
+                                    
+                                        return selected;
+                                    }}
+                                    >
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                    <MenuItem value={30}>Thirty</MenuItem>
+                                </Select>
+                                </FormControl>
+                            </Box>
                             </Box>
                             <Box sx={{width:'45%'}}>
                                 <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
                                 Select visa type
                                 </Typography>
-                                <Typography variant="h3" sx={{fontWeight:'bold',textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'38px',color:'secondary.main',marginBlock:'8px'}}>
+                                <Typography variant="h3" sx={{textTransform:'uppercase',textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'24px',color:'secondary.main',marginBlock:'8px'}}>
                                 Tourist Visa
                                 </Typography>
                                 <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px'}}>
