@@ -88,3 +88,10 @@ a {
     color-scheme: dark;
   }
 }
+.css-1n4a7ke-MuiStack-root>.MuiTextField-root, .css-1n4a7ke-MuiStack-root>.MuiPickersTextField-root,
+.css-1gbeqd5-MuiStack-root>.MuiTextField-root, .css-1gbeqd5-MuiStack-root>.MuiPickersTextField-root {
+    min-width: 100% !important;
+}
+.css-14j09xo-MuiButtonBase-root-MuiTab-root>.MuiTab-icon,.css-1htxsrz-MuiButtonBase-root-MuiTab-root>.MuiTab-icon{
+	margin-bottom: 0px !important;
+}

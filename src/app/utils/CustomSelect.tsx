@@ -15,10 +15,10 @@ export default function CustomSelect({ label, value, onChange, options }) {
             backgroundColor: 'secondary.light',
             borderRadius: '4px',
             padding: '4px',
-            fontFamily: 'PTRootUIWebLight',
+            fontFamily: 'PTRootUIWebMedium',
             fontSize: '14px',
+            fontStyle: 'normal',
             height: '30px',
-            textTransform: 'capitalize',
             '& .MuiOutlinedInput-notchedOutline': {
               border: 'none',
             },
@@ -31,7 +31,7 @@ export default function CustomSelect({ label, value, onChange, options }) {
           }}
           renderValue={(selected) => {
             if (selected.length === 0) {
-              return <em>{options[0]}</em>;
+              return <>{options[0]}</>;
             }
 
             return selected.join(', ');
