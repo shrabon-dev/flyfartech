@@ -1,4 +1,4 @@
-import { Box, FormControl, InputLabel, MenuItem, OutlinedInput, Select, Stack, Typography } from "@mui/material";
+import { Box, FormControl, Grow, InputLabel, MenuItem, OutlinedInput, Select, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { GiAirplaneDeparture } from "react-icons/gi";
 import { GiAirplaneArrival } from "react-icons/gi";
@@ -17,6 +17,7 @@ export default function TripWay({type}) {
         };
   return (
     <>
+    <Grow in={type} timeout={1000}>
         <Stack direction={{xs:'column',sm:'row'}} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
           <Box sx={{width:{xs:'100%',sm:'35%'}}}>
           <Typography variant="body2" sx={{fontWeight:'bold',textAlign:'center',fontFamily:'PTRootUIWebLight',fontSize:'14px'}}>
@@ -228,6 +229,7 @@ export default function TripWay({type}) {
           </Box>
           </Box>
         </Stack>
+    </Grow>
     </>
   )
 }

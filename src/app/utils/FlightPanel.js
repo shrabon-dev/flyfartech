@@ -1,4 +1,5 @@
-import { Box, FormControl, InputLabel, MenuItem, OutlinedInput, Select, Stack, Typography } from "@mui/material";
+'use client'
+import { Box, FormControl, Grow, InputLabel, MenuItem, OutlinedInput, Select, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { GiAirplaneDeparture } from "react-icons/gi";
 import { GiAirplaneArrival } from "react-icons/gi";
@@ -13,7 +14,7 @@ import TripWay from "./TripWay";
 export default function FlightPanel({trip_type}) {
     
   return (
-    <> 
+    <>  
         <Box sx={{width:'100%',height:'100%',borderRadius:'8px',padding:'10px'}}>
         {trip_type == 'round-way' ?
           <TripWay type={trip_type}/>
@@ -38,6 +39,7 @@ export default function FlightPanel({trip_type}) {
         }
           
         </Box>
+
 </>
   )
 }

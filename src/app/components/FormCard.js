@@ -79,7 +79,7 @@ export default function FormCard({panelType}) {
                     <>
                     <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
                         <Box sx={{width:'35%',zIndex:99}}>
-                        <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
+                        <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',fontSize:{xs:'10px',md:'14px'}}}>
                             DISTINATION
                         </Typography>
                         <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px',xl:'32px'},color:'secondary.main',marginBlock:'8px'}}>
@@ -132,7 +132,7 @@ export default function FormCard({panelType}) {
                     
                         </Box>
                         <Box sx={{width:'35%',zIndex:99}}>
-                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
+                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',fontSize:{xs:'10px',md:'14px'}}}>
                                 CHECK IN
                             </Typography>
                             <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px',xl:'32px'},color:'secondary.main',marginBlock:'8px'}}>
@@ -184,7 +184,7 @@ export default function FormCard({panelType}) {
                         </Box>
                         </Box>
                         <Box sx={{width:'35%',zIndex:99}}>
-                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
+                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',fontSize:{xs:'10px',md:'14px'}}}>
                                 CHECK OUT
                             </Typography>
                             <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px',xl:'32px'},color:'secondary.main',marginBlock:'8px'}}>
@@ -242,7 +242,7 @@ export default function FormCard({panelType}) {
                         <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
                         
                            <Box sx={{width:'35%'}}>
-                           <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
+                           <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',fontSize:{xs:'10px',md:'14px'}}}>
                            DESTINATION TYPE
                            </Typography>
                            <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px',xl:'32px'},color:'secondary.main',marginBlock:'8px'}}>
@@ -283,16 +283,18 @@ export default function FormCard({panelType}) {
                                        return selected;
                                    }}
                                    >
-                                   <MenuItem value={10}>Ten</MenuItem>
-                                   <MenuItem value={20}>Twenty</MenuItem>
-                                   <MenuItem value={30}>Thirty</MenuItem>
+                                    {inputInfo.bangladeshAirports.map((airport) => (
+                                        <MenuItem key={airport.code} value={airport.code}>
+                                            {airport.name} ({airport.city})
+                                        </MenuItem>
+                                    ))}
                                </Select>
                                </FormControl>
                            </Box>
                        
                            </Box>
                            <Box sx={{width:'35%'}}>
-                               <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
+                               <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',fontSize:{xs:'10px',md:'14px'}}}>
                                 WHERE?
                                </Typography>
                                <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px',xl:'32px'},color:'secondary.main',marginBlock:'8px'}}>
@@ -333,15 +335,17 @@ export default function FormCard({panelType}) {
                                        return selected;
                                    }}
                                    >
-                                   <MenuItem value={10}>Ten</MenuItem>
-                                   <MenuItem value={20}>Twenty</MenuItem>
-                                   <MenuItem value={30}>Thirty</MenuItem>
+                                    {inputInfo.bangladeshAirports.map((airport) => (
+                                        <MenuItem key={airport.code} value={airport.code}>
+                                            {airport.name} ({airport.city})
+                                        </MenuItem>
+                                    ))}
                                </Select>
                                </FormControl>
                            </Box>
                            </Box>
                            <Box sx={{width:'35%'}}>
-                               <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
+                               <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',fontSize:{xs:'10px',md:'14px'}}}>
                                WHEN?
                                </Typography>
                                <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px',xl:'32px'},color:'secondary.main',marginBlock:'8px'}}>
@@ -397,7 +401,7 @@ export default function FormCard({panelType}) {
                             {panelType == 'VISA' ?
                             <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
                             <Box sx={{width:'45%'}}>
-                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
+                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',textTransform:'uppercase',fontSize:{xs:'10px',md:'14px'}}}>
                             Destination city or country
                             </Typography>
                             <Typography variant="h3" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px',xl:'32px'},color:'secondary.main',marginBlock:'8px'}}>
@@ -438,15 +442,17 @@ export default function FormCard({panelType}) {
                                         return selected;
                                     }}
                                     >
-                                    <MenuItem value={10}>Ten</MenuItem>
-                                    <MenuItem value={20}>Twenty</MenuItem>
-                                    <MenuItem value={30}>Thirty</MenuItem>
+                                    {inputInfo.bangladeshAirports.map((airport) => (
+                                        <MenuItem key={airport.code} value={airport.code}>
+                                            {airport.name} ({airport.city})
+                                        </MenuItem>
+                                    ))}
                                 </Select>
                                 </FormControl>
                             </Box>
                             </Box>
                             <Box sx={{width:'45%'}}>
-                                <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
+                                <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',textTransform:'uppercase',fontSize:{xs:'10px',md:'14px'}}}>
                                 Select visa type
                                 </Typography>
                                 <Typography variant="h3" sx={{textTransform:'uppercase',textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px',xl:'32px'},color:'secondary.main',marginBlock:'8px'}}>
@@ -487,9 +493,11 @@ export default function FormCard({panelType}) {
                                         return selected;
                                     }}
                                     >
-                                    <MenuItem value={10}>Ten</MenuItem>
-                                    <MenuItem value={20}>Twenty</MenuItem>
-                                    <MenuItem value={30}>Thirty</MenuItem>
+                                    {inputInfo.bangladeshAirports.map((airport) => (
+                                        <MenuItem key={airport.code} value={airport.code}>
+                                            {airport.name} ({airport.city})
+                                        </MenuItem>
+                                    ))}
                                 </Select>
                                 </FormControl>
                             </Box>

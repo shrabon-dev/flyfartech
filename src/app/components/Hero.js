@@ -5,11 +5,14 @@ import {
   Box,
   Button,
   Container,
+  Fade,
   FormControl,
+  Grow,
   InputLabel,
   MenuItem,
   OutlinedInput,
   Select,
+  Slide,
   Stack,
   Tab,
   Tabs,
@@ -40,14 +43,14 @@ const MenuProps = {
 
 
 export default function Hero() {
-
-  const tabsData = [
-    { label: "FLIGHT", tabs: "FLIGHT",icon:<LocalAirportOutlinedIcon sx={{color:'secondary.dark',fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
-    { label: "HOTEL", tabs: "HOTEL",icon:<MapsHomeWorkIcon sx={{color:'secondary.dark',fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
-    { label: "TOUR", tabs: "TOUR",icon:<TravelExploreIcon sx={{color:'secondary.dark',fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
-    { label: "VISA", tabs: "VISA",icon:<AirplaneTicketIcon sx={{color:'secondary.dark',fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
-  ];
   const [value, setValue] = useState(0);
+  const tabsData = [
+    { label: "FLIGHT", tabs: "FLIGHT",icon:<LocalAirportOutlinedIcon sx={{fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
+    { label: "HOTEL", tabs: "HOTEL",icon:<MapsHomeWorkIcon sx={{fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
+    { label: "TOUR", tabs: "TOUR",icon:<TravelExploreIcon sx={{fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
+    { label: "VISA", tabs: "VISA",icon:<AirplaneTicketIcon sx={{fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
+  ];
+
   const [panel, setPanel] = useState(tabsData[0].tabs);
   const [tripType, setTripType] = useState('Round-Way');
   const dispatch = useDispatch(); 
@@ -153,7 +156,9 @@ export default function Hero() {
                   >
                     {tabsData.map((tab, index) => (
                       <Tab
-                      icon={tab.icon}
+                      icon={
+                        <Typography variant="body2" sx={{color:value === index ? "secondary.light" : "secondary.dark",display:'flex',fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}>{tab.icon}</Typography>
+                      }
                         key={index}
                         label={tab.label} 
                         sx={{
@@ -195,6 +200,7 @@ export default function Hero() {
 
               {/* Panel Start*/}
               {panel == 'FLIGHT' ?
+                  <Grow  in={panel} timeout={400}>
                   <Stack
                     sx={{ marginBlock: "2rem" }}
                     direction={{ xs: "column", md: "row" }}
@@ -235,7 +241,7 @@ export default function Hero() {
                         </Box>
                       </Stack>
                       {/* Tabs or Panel Start */}
-                      <FlightPanel trip_type={tripType} />
+                        <FlightPanel trip_type={tripType} />
                       {/* Tabs or Panel End */}
                     </Box>
                     {/* Right Panel */}
@@ -324,9 +330,9 @@ export default function Hero() {
                             />
                         </Box>
                         <Box sx={{width:'100%',marginTop:'62px',zIndex:2}}>
-                          <a href={'/flight-search'} >
+                          <Link href={'/flight-search'} passHref>
                               <Button  variant="contained" sx={{width:'100%',marginBlock:'16px',bgcolor:'secondary.main'}}>Search For Flight</Button>
-                          </a>
+                          </Link>
                         </Box>
                         {tripType == 'multi-city' &&
                           <Box sx={{width:'100%',marginTop:'8px'}}>
@@ -336,6 +342,7 @@ export default function Hero() {
                       </Stack>
                     </Box>
                   </Stack>
+                  </Grow>
               :
                 <>
 

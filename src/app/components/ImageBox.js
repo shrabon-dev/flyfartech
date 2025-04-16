@@ -1,5 +1,5 @@
 "use client";
-import { Box, Container, IconButton } from "@mui/material";
+import { Box, Container, Fade, IconButton } from "@mui/material";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,13 +12,17 @@ import imgTwo from "../assets/images/sliderimg4.webp";
 import imgThree from "../assets/images/sliderimg5.webp";
 import WestIcon from '@mui/icons-material/West';
 import EastIcon from '@mui/icons-material/East';
+import { useInView } from "react-intersection-observer";
 
 export default function ImageBox() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Animate only once
+    threshold: 0.2,     // % of item visible to trigger (0.2 = 20%)
+  });
   return (
-    <Box sx={{bgcolor:'primary.light'}}>
+    <Box ref={ref} sx={{bgcolor:'primary.light'}}>
         <Container maxWidth={"lg"} sx={{ paddingBlock: "2rem" }}>
           <Box position="relative">
             {/* Custom Nav Buttons */}
@@ -74,17 +78,19 @@ export default function ImageBox() {
             >
               {[imgOne, imgTwo, imgThree, imgOne].map((img, index) => (
                 <SwiperSlide key={index}>
-                  <Image
-                    src={img}
-                    alt="promotion img"
-                    style={{
-                      width: "100%",
-                      height: "200px",
-                      display: "block",
-                      objectFit: "cover",
-                      borderRadius: "16px",
-                    }}
-                  />
+                    <Fade direction="up" in={inView} timeout={400}>
+                      <Image
+                        src={img}
+                        alt="promotion img"
+                        style={{
+                          width: "100%",
+                          height: "200px",
+                          display: "block",
+                          objectFit: "cover",
+                          borderRadius: "16px",
+                        }}
+                      />
+                  </Fade>
                 </SwiperSlide>
               ))}
             </Swiper>
