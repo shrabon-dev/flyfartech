@@ -62,7 +62,7 @@ export default function TripWay({type}) {
                   }}
                 >
                     {inputInfo.bangladeshAirports.map((airport) => (
-                    <MenuItem key={airport.code} value={airport.code}>
+                    <MenuItem key={airport.name} value={airport.name}>
                         {airport.name} ({airport.city})
                     </MenuItem>
                     ))}
@@ -177,7 +177,7 @@ export default function TripWay({type}) {
                   }}
                 >
                     {inputInfo.bangladeshAirports.map((airport) => (
-                      <MenuItem key={airport.code} value={airport.code}>
+                      <MenuItem key={airport.name} value={airport.name}>
                           {airport.name} ({airport.city})
                       </MenuItem>
                     ))}
