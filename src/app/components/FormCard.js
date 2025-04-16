@@ -241,7 +241,7 @@ export default function FormCard({panelType}) {
                         {panelType == 'TOUR' ?
                         <Stack direction={{xs:'col',sm:'row'}} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
                         
-                           <Box sx={{width:{xs:'100%',sm:'35%'}}}>
+                           <Box sx={{width:{xs:'100%',sm:'35%'},zIndex:'99'}}>
                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',fontSize:{xs:'10px',md:'14px'}}}>
                            DESTINATION TYPE
                            </Typography>
@@ -293,7 +293,7 @@ export default function FormCard({panelType}) {
                            </Box>
                        
                            </Box>
-                           <Box sx={{width:{xs:'100%',sm:'35%'}}}>
+                           <Box sx={{width:{xs:'100%',sm:'35%'},zIndex:'99'}}>
                                <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',fontSize:{xs:'10px',md:'14px'}}}>
                                 WHERE?
                                </Typography>
@@ -344,7 +344,7 @@ export default function FormCard({panelType}) {
                                </FormControl>
                            </Box>
                            </Box>
-                           <Box sx={{width:{xs:'100%',sm:'35%'}}}>
+                           <Box sx={{width:{xs:'100%',sm:'35%'},zIndex:'99'}}>
                                <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',fontSize:{xs:'10px',md:'14px'}}}>
                                WHEN?
                                </Typography>
@@ -400,7 +400,7 @@ export default function FormCard({panelType}) {
                         <>
                             {panelType == 'VISA' ?
                             <Stack direction={{xs:'col',sm:'row'}} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
-                            <Box sx={{width:{xs:'100%',sm:'45%'}}}>
+                            <Box sx={{width:{xs:'100%',sm:'45%'},zIndex:'99'}}>
                             <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',textTransform:'uppercase',fontSize:{xs:'10px',md:'14px'}}}>
                             Destination city or country
                             </Typography>
@@ -451,7 +451,7 @@ export default function FormCard({panelType}) {
                                 </FormControl>
                             </Box>
                             </Box>
-                            <Box sx={{width:{xs:'100%',sm:'45%'}}}>
+                            <Box sx={{width:{xs:'100%',sm:'45%'},zIndex:'99'}}>
                                 <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',textTransform:'uppercase',fontSize:{xs:'10px',md:'14px'}}}>
                                 Select visa type
                                 </Typography>
@@ -544,7 +544,7 @@ export default function FormCard({panelType}) {
                           flexWrap="wrap"
                           
                         >
-                          <Box sx={{width:{xs:'100%',sm:'32%',},marginBottom:{xs:'6px',sm:'0px'}}}>
+                          <Box sx={{width:{xs:'100%',sm:'32%',},zIndex:'99',marginBottom:{xs:'6px',sm:'0px'}}}>
                             <CustomSelect
                               label="Adult"
                               value={adult}
@@ -558,7 +558,7 @@ export default function FormCard({panelType}) {
                               options={inputInfo.adults}
                             />
                           </Box>
-                          <Box sx={{width:{xs:'100%',sm:'32%',},marginBottom:{xs:'6px',sm:'0px'}}}>
+                          <Box sx={{width:{xs:'100%',sm:'32%',},zIndex:'99',marginBottom:{xs:'6px',sm:'0px'}}}>
                             <CustomSelect
                               label="Child"
                               value={child}
@@ -573,7 +573,7 @@ export default function FormCard({panelType}) {
                               options={inputInfo.children}
                             />
                           </Box>
-                          <Box sx={{width:{xs:'100%',sm:'32%',},marginBottom:{xs:'6px',sm:'0px'}}}>
+                          <Box sx={{width:{xs:'100%',sm:'32%',},zIndex:'99',marginBottom:{xs:'6px',sm:'0px'}}}>
                               <CustomSelect
                                 label="Infant"
                                 value={infant}
