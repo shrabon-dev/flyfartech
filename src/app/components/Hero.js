@@ -123,7 +123,7 @@ export default function Hero() {
               backgroundImage: `url(${bg.src})`,
               backgroundSize: "cover",
               borderRadius: "8px",
-              backgroundPosition: "center",
+              backgroundPosition: "top",
               width: "100%",
               display: "flex",
               justifyContent: "center",
@@ -272,7 +272,7 @@ export default function Hero() {
                         flexWrap="wrap"
                         
                       >
-                        <Box sx={{width:'32%',zIndex:99}}>
+                        <Box sx={{width:{xs:'100%',sm:'32%',},marginBottom:{xs:'6px',sm:'0px'},zIndex:99}}>
                           <CustomSelect
                             label="Adult"
                             value={adult}
@@ -286,7 +286,7 @@ export default function Hero() {
                             options={adalts}
                           />
                         </Box>
-                        <Box sx={{width:'32%',zIndex:99}}>
+                        <Box sx={{width:{xs:'100%',sm:'32%',},marginBottom:{xs:'6px',sm:'0px'},zIndex:99}}>
                           <CustomSelect
                             label="Child"
                             value={child}
@@ -301,7 +301,7 @@ export default function Hero() {
                             options={childs}
                           />
                         </Box>
-                        <Box sx={{width:'32%',zIndex:99}}>
+                        <Box sx={{width:{xs:'100%',sm:'32%',},marginBottom:{xs:'6px',sm:'0px'},zIndex:99}}>
                             <CustomSelect
                               label="Infant"
                               value={infant}
