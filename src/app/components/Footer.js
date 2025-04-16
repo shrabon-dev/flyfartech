@@ -14,7 +14,7 @@ import SendIcon from '@mui/icons-material/Send';
 
 export default function Footer() {
   return (
-    <Box sx={{ backgroundColor: "secondary.main", paddingBlock: 5 }}>
+    <Box sx={{ backgroundColor: "secondary.main", paddingBlock: 5,borderTop: "2px solid",borderColor: "secondary.dark" }}>
       <footer>
         <Container maxWidth="lg">
           <Grid container justifyContent={'space-between'} >
