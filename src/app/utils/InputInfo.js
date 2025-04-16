@@ -4,8 +4,8 @@
       "6 Adults", "7 Adults", "8 Adults", "9 Adults"
     ],
     children: [
-      "1 Child", "2 Children", "3 Children", "4 Children", "5 Children",
-      "6 Children", "7 Children", "8 Children", "9 Children"
+      "1 Child", "2 Childs", "3 Childs", "4 Childs", "5 Childs",
+      "6 Childs", "7 Childs", "8 Childs", "9 Childs"
     ],
     infants: [
       "1 Infant", "2 Infants", "3 Infants", "4 Infants", "5 Infants"
