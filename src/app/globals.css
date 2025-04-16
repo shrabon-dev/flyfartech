@@ -99,3 +99,9 @@ a {
 	background: #32D095 !important;
 	color: #ffffff !important;
 }
+@media screen and (max-width: 640px) {
+	.css-ttqikz-MuiButtonBase-root-MuiMenuItem-root {
+		font-size: 12px !important;
+	}
+
+}
