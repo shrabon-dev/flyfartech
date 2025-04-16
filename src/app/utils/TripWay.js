@@ -19,7 +19,7 @@ export default function TripWay({type}) {
     <>
     <Grow in={type} timeout={1000}>
         <Stack direction={{xs:'column',sm:'row'}} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
-          <Box sx={{width:{xs:'100%',sm:'35%'}}}>
+          <Box sx={{width:{xs:'100%',sm:'35%'},zIndex:99}}>
           <Typography variant="body2" sx={{fontWeight:'bold',textAlign:'center',fontFamily:'PTRootUIWebLight',fontSize:'14px'}}>
               From
           </Typography>
@@ -113,7 +113,7 @@ export default function TripWay({type}) {
               </LocalizationProvider>
           </Box>
           </Box>
-          <Box sx={{width:{xs:'20%',sm:'25%'},textAlign:'center'}}>
+          <Box sx={{width:{xs:'20%',sm:'25%'},zIndex:99,textAlign:'center'}}>
             {type == 'one-way' ? 
                 <AirplanemodeActiveIcon sx={{fontSize:'96px',rotate:'90deg',color:'secondary.main'}}/>
             :
@@ -133,7 +133,7 @@ export default function TripWay({type}) {
             }
       
           </Box>
-          <Box sx={{width:{xs:'100%',sm:'35%'}}}>
+          <Box sx={{width:{xs:'100%',sm:'35%'},zIndex:99}}>
           <Typography variant="body2" sx={{fontWeight:'bold',textAlign:'center',fontFamily:'PTRootUIWebLight',fontSize:'14px'}}>
               From
           </Typography>
