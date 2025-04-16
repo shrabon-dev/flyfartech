@@ -26,7 +26,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
           <Head>
-          <link rel="icon" type="image/x-icon" href='/favicon62.png' />
+          <link rel="icon" type="image/x-icon" href='/favicon.svg' />
+          <link rel="icon" type="image/svg" href='/favicon.svg' />
           </Head>
           <body className={`${geistSans.variable} ${geistMono.variable}`}>
             <Provider store={store} >
