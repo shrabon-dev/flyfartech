@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box, Collapse, Container, Fade, Grow, Slide, Stack, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Collapse, Container, Fade, Grow, Skeleton, Slide, Stack, Tab, Tabs, Typography } from "@mui/material";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -120,21 +120,30 @@ export default function HotDeal() {
                     },
                   }}>
                     {tab.images.map((img, idx) => (
-                      <SwiperSlide key={idx}>
-                        <Grow in={true} timeout={600}>
-                        <Image
-                          src={img}
-                          alt={`promotion-${index}-${idx}`}
-                          style={{
-                            width: "100%",
-                            height: "200px",
-                            display: "block",
-                            objectFit: "cover",
-                            borderRadius: "16px",
-                          }}
-                        />
-                        </Grow>
-                      </SwiperSlide>
+                      img ?
+                        (
+                          <SwiperSlide key={idx}>
+                          <Grow in={true} timeout={600}>
+                          <Image
+                            src={img}
+                            alt={`promotion-${index}-${idx}`}
+                            style={{
+                              width: "100%",
+                              height: "200px",
+                              display: "block",
+                              objectFit: "cover",
+                              borderRadius: "16px",
+                            }}
+                          />
+                          </Grow>
+                        </SwiperSlide>
+                        )
+                        :
+                        (
+                          <Skeleton variant="rectangular" width="100%" height="150px" sx={{ mb: 2,marginBlock:'20px',borderRadius:'8px' }} />
+                        )
+                      
+                
                     ))}
                   </Swiper>
                 </CustomTabPanel>
