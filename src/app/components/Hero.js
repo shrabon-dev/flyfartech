@@ -24,6 +24,8 @@ import AirplaneTicketIcon from '@mui/icons-material/AirplaneTicket';
 import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
 import FormCard from "./FormCard";
 import Link from "next/link";
+import { useDispatch, useSelector, } from 'react-redux';
+import { setTravelTripType, selectTripType } from '../store/TripTypeSlice'
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -38,15 +40,19 @@ const MenuProps = {
 
 
 export default function Hero() {
+
   const tabsData = [
-    { label: "FLIGHT", tabs: "FLIGHT",icon:<LocalAirportOutlinedIcon sx={{color:'white',fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
-    { label: "HOTEL", tabs: "HOTEL",icon:<MapsHomeWorkIcon sx={{color:'white',fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
-    { label: "TOUR", tabs: "TOUR",icon:<TravelExploreIcon sx={{color:'white',fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
-    { label: "VISA", tabs: "VISA",icon:<AirplaneTicketIcon sx={{color:'white',fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
+    { label: "FLIGHT", tabs: "FLIGHT",icon:<LocalAirportOutlinedIcon sx={{color:'secondary.dark',fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
+    { label: "HOTEL", tabs: "HOTEL",icon:<MapsHomeWorkIcon sx={{color:'secondary.dark',fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
+    { label: "TOUR", tabs: "TOUR",icon:<TravelExploreIcon sx={{color:'secondary.dark',fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
+    { label: "VISA", tabs: "VISA",icon:<AirplaneTicketIcon sx={{color:'secondary.dark',fontSize:{xs:'14px',sm:'18px'},marginBottom:'0px !important',marginRight:{xs:'2px',sm:'6px'}}}/> },
   ];
   const [value, setValue] = useState(0);
   const [panel, setPanel] = useState(tabsData[0].tabs);
   const [tripType, setTripType] = useState('Round-Way');
+  const dispatch = useDispatch(); 
+  const selectedTripType = useSelector(selectTripType);
+
 
 
 
@@ -98,241 +104,250 @@ export default function Hero() {
     setPanel(tabsData[newValue].tabs);
   };
 
+  const handleTripType = (value) => {
+    if (tripType !== value) {
+      setTripType(value);  
+      dispatch(setTravelTripType(value)); 
+    }
+   
+  };
   return (
     <section className="hero">
-      <Container maxWidth="xl" sx={{ marginBottom: "4rem" }}>
-        <Box
-          sx={{
-            backgroundImage: `url(${bg.src})`,
-            backgroundSize: "cover",
-            borderRadius: "8px",
-            backgroundPosition: "center",
-            minHeight: 600,
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Container maxWidth="lg" sx={{ marginBlock: "2rem" }}>
-            {/* Tabs */}
-            <Stack
-              sx={{ marginBlock: "2rem" }}
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
-            >
-              <Box
-                sx={{
-                  border: 1,
-                  borderColor: "divider",
-                  bgcolor: "secondary.main",
-                  borderRadius: "50px",
-                  minHeight: {xs:'34px',md:"44px"},
-                  width: "fit-content !important",
-                }}
+      <Box sx={{bgcolor:'primary.light'}}>
+        <Container maxWidth="xl" sx={{ paddingBottom: "4rem" }}>
+          <Box
+            sx={{
+              backgroundImage: `url(${bg.src})`,
+              backgroundSize: "cover",
+              borderRadius: "8px",
+              backgroundPosition: "center",
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Container maxWidth="lg" sx={{ marginBlock: "2rem" }}>
+              {/* Tabs */}
+              <Stack
+                sx={{ marginBlock: "2rem" }}
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
               >
-                <Tabs
-                 value={value}
-                 onChange={handleChange} 
-                  TabIndicatorProps={{ style: { display: "none" } }}
-                  sx={{ marginTop: "6px", minHeight:  {xs:'34px',md:"44px"} }}
+                <Box
+                  sx={{
+                    border: 1,
+                    borderColor: "divider",
+                    bgcolor: "white",
+                    borderRadius: "50px",
+                    minHeight: {xs:'34px',md:"44px"},
+                    width: "fit-content !important",
+                  }}
                 >
-                  {tabsData.map((tab, index) => (
-                    <Tab
-                    icon={tab.icon}
-                      key={index}
-                      label={tab.label} 
+                  <Tabs
+                  value={value}
+                  onChange={handleChange} 
+                    TabIndicatorProps={{ style: { display: "none" } }}
+                    sx={{ marginTop: "6px", minHeight:  {xs:'34px',md:"44px"} }}
+                  >
+                    {tabsData.map((tab, index) => (
+                      <Tab
+                      icon={tab.icon}
+                        key={index}
+                        label={tab.label} 
+                        sx={{
+                          bgcolor:value === index ? "secondary.dark" : "transparent",
+                          color: "secondary.main",
+                          padding: {xs:'0px 2px',md:'"5px 20px"'},
+                          borderRadius: "50px",
+                          fontFamily: "PTRootUIWebLight",
+                          fontSize: {xs:'8px',sm:'10px',md:'14px'},
+                          display: "flex",
+                          alignItems: "center",
+                          flexDirection: "row",
+                          textTransform: "capitalize",
+                          minHeight: {xs:'28px',md:"36px"},
+                          minWidth: {xs:"auto",sm:"90px"},
+                          fontWeight: "bold",
+                          mx: 1,
+                          transition: "0.3s ease",
+                          "&:hover": {
+                            color: "white",
+                            bgcolor: "secondary.main",
+                          },
+                          "&.Mui-selected": {
+                            color: "white",
+                            border: "none",
+                            bgcolor: "secondary.main",
+                          },
+                          "&.Mui-focusVisible": {
+                            color: "white",
+                            border: "none",
+                            bgcolor: "secondary.main",
+                          },
+                        }}
+                      />
+                    ))}
+                  </Tabs>
+                </Box>
+              </Stack>
+
+              {/* Panel Start*/}
+              {panel == 'FLIGHT' ?
+                  <Stack
+                    sx={{ marginBlock: "2rem" }}
+                    direction={{ xs: "column", md: "row" }}
+                    justifyContent="center"
+                    alignItems="stretch"
+                  >
+                    {/* Left Panel */}
+                    <Box
                       sx={{
-                        bgcolor:
-                        value === index ? "secondary.dark" : "transparent",
-                        color: "white",
-                        padding: {xs:'0px 2px',md:'"5px 20px"'},
-                        borderRadius: "50px",
-                        fontFamily: "PTRootUIWebLight",
-                        fontSize: {xs:'8px',sm:'10px',md:'14px'},
-                        display: "flex",
-                        alignItems: "center",
-                        flexDirection: "row",
-                        textTransform: "capitalize",
-                        minHeight: {xs:'28px',md:"36px"},
-                        minWidth: {xs:"auto",sm:"90px"},
-                        fontWeight: "bold",
-                        mx: 1,
-                        transition: "0.3s ease",
-                        "&:hover": {
-                          color: "white",
-                          bgcolor: "secondary.dark",
-                        },
-                        "&.Mui-selected": {
-                          color: "white",
-                          border: "none",
-                        },
-                        "&.Mui-focusVisible": {
-                          color: "white",
-                          border: "none",
+                        width:{xs:'100%',sm:'100%',md:'calc(100% - 360px)'},
+                        maxWidth:{xs:'100%',sm:'100%',md:'calc(100% - 360px)'},
+                        bgcolor: "white",
+                        padding: "20px",
+                        borderRadius: "8px",
+                        position: "relative",
+                        
+                      }}
+                    >
+                      {/* round way navs tabs */}
+                      <Stack className="round-way-tabs" direction="row" alignItems="center" flexWrap="wrap" sx={{marginBottom:'16px',gap:{xs:'4px',md:'16px'}}}>
+                        <Box onClick={()=>handleTripType('round-way')} sx={{display:'flex',alignItems:'center',gap:{xs:'4px',sm:'8px'},cursor:'pointer'}}>
+                          <Box sx={{width:{xs:'8px',sm:'16px'},height:{xs:'8px',sm:'16px'},bgcolor: tripType === 'round-way' ? 'secondary.main' : 'secondary.light',border:"2px solid",borderColor:'secondary.dark',borderRadius:'100%'}}></Box>
+                          <Typography sx={{fontSize:{xs:'10px',sm:'14px'},fontWeight:'bold',color:'secondary.main',fontFamily:'PTRootUIWebBold'}}> 
+                            Round-Way
+                          </Typography>
+                        </Box>
+                        <Box onClick={()=>handleTripType('one-way')} sx={{display:'flex',alignItems:'center',gap:{xs:'4px',sm:'8px'},cursor:'pointer'}}>
+                          <Box sx={{width:{xs:'8px',sm:'16px'},height:{xs:'8px',sm:'16px'},bgcolor: tripType === 'one-way' ? 'secondary.main' : 'secondary.light',border:"2px solid",borderColor:'secondary.dark',borderRadius:'100%'}}></Box>
+                          <Typography sx={{fontSize:{xs:'10px',sm:'14px'},fontWeight:'bold',color:'secondary.main',fontFamily:'PTRootUIWebBold'}}> 
+                            One-Way
+                          </Typography>
+                        </Box>
+                        <Box onClick={()=>handleTripType('multi-city')} sx={{display:'flex',alignItems:'center',gap:{xs:'4px',sm:'8px'},cursor:'pointer'}}>
+                          <Box sx={{width:{xs:'8px',sm:'16px'},height:{xs:'8px',sm:'16px'},bgcolor: tripType === 'multi-city' ? 'secondary.main' : 'secondary.light',border:"2px solid",borderColor:'secondary.dark',borderRadius:'100%'}}></Box>
+                          <Typography sx={{fontSize:{xs:'10px',sm:'14px'},fontWeight:'bold',color:'secondary.main',fontFamily:'PTRootUIWebBold'}}> 
+                            Multi-City
+                          </Typography>
+                        </Box>
+                      </Stack>
+                      {/* Tabs or Panel Start */}
+                      <FlightPanel trip_type={tripType} />
+                      {/* Tabs or Panel End */}
+                    </Box>
+                    {/* Right Panel */}
+                    <Box
+                      sx={{
+                        bgcolor: "white",
+                        padding: "20px",
+                        borderRadius: "8px",
+                        position: "relative",
+                        maxWidth: {xs:'100%',md:'360px'},
+                        "&::after": {
+                          content: '""',
+                          position: "absolute",
+                          width: "100%",
+                          height: "100%",
+                          borderLeft: {xs:'none',sm:"2px dotted #a0bbd130"},
+                          borderTop: {xs:'1px dotted #a0bbd130',sm:"none"}, 
+                          top: 0,
+                          left: 0,
+                          zIndex: 1,
                         },
                       }}
-                    />
-                  ))}
-                </Tabs>
-              </Box>
-            </Stack>
-
-            {/* Panel Start*/}
-            {panel == 'FLIGHT' ?
-                <Stack
-                  sx={{ marginBlock: "2rem" }}
-                  direction={{ xs: "column", md: "row" }}
-                  justifyContent="center"
-                  alignItems="stretch"
-                >
-                  {/* Left Panel */}
-                  <Box
-                    sx={{
-                      width:{xs:'100%',sm:'100%',md:'calc(100% - 360px)'},
-                      maxWidth:{xs:'100%',sm:'100%',md:'calc(100% - 360px)'},
-                      bgcolor: "white",
-                      padding: "20px",
-                      borderRadius: "8px",
-                      position: "relative",
-                      
-                    }}
-                  >
-                    {/* round way navs tabs */}
-                    <Stack className="round-way-tabs" direction="row" alignItems="center" flexWrap="wrap" sx={{marginBottom:'16px',gap:{xs:'4px',md:'16px'}}}>
-                      <Box onClick={()=>setTripType('round-way')} sx={{display:'flex',alignItems:'center',gap:{xs:'4px',sm:'8px'},cursor:'pointer'}}>
-                        <Box sx={{width:{xs:'8px',sm:'16px'},height:{xs:'8px',sm:'16px'},bgcolor:'secondary.light',border:"2px solid",borderColor:'secondary.dark',borderRadius:'100%'}}></Box>
-                        <Typography sx={{fontSize:{xs:'10px',sm:'14px'},fontWeight:'bold',color:'secondary.main',fontFamily:'PTRootUIWebBold'}}> 
-                          Round-Way
-                        </Typography>
-                      </Box>
-                      <Box onClick={()=>setTripType('one-way')} sx={{display:'flex',alignItems:'center',gap:{xs:'4px',sm:'8px'},cursor:'pointer'}}>
-                        <Box sx={{width:{xs:'8px',sm:'16px'},height:{xs:'8px',sm:'16px'},bgcolor:'secondary.light',border:"2px solid",borderColor:'secondary.dark',borderRadius:'100%'}}></Box>
-                        <Typography sx={{fontSize:{xs:'10px',sm:'14px'},fontWeight:'bold',color:'secondary.main',fontFamily:'PTRootUIWebBold'}}> 
-                          One-Way
-                        </Typography>
-                      </Box>
-                      <Box onClick={()=>setTripType('multi-city')} sx={{display:'flex',alignItems:'center',gap:{xs:'4px',sm:'8px'},cursor:'pointer'}}>
-                        <Box sx={{width:{xs:'8px',sm:'16px'},height:{xs:'8px',sm:'16px'},bgcolor:'secondary.light',border:"2px solid",borderColor:'secondary.dark',borderRadius:'100%'}}></Box>
-                        <Typography sx={{fontSize:{xs:'10px',sm:'14px'},fontWeight:'bold',color:'secondary.main',fontFamily:'PTRootUIWebBold'}}> 
-                          Multi-City
-                        </Typography>
-                      </Box>
-                    </Stack>
-                    {/* Tabs or Panel Start */}
-                    <FlightPanel trip_type={tripType} />
-                    {/* Tabs or Panel End */}
-                  </Box>
-                  {/* Right Panel */}
-                  <Box
-                    sx={{
-                      bgcolor: "white",
-                      padding: "20px",
-                      borderRadius: "8px",
-                      position: "relative",
-                      maxWidth: {xs:'100%',md:'360px'},
-                      "&::after": {
-                        content: '""',
-                        position: "absolute",
-                        width: "100%",
-                        height: "100%",
-                        borderLeft: {xs:'none',sm:"2px dotted #a0bbd1"},
-                        borderTop: {xs:'1px dotted #a0bbd1',sm:"none"}, 
-                        top: 0,
-                        left: 0,
-                        zIndex: 1,
-                      },
-                    }}
-                  >
-                    <Stack
-                      direction="row"
-                      justifyContent="space-between"
-                      alignItems="center"
-                      flexWrap="wrap"
-                      
                     >
-                      <Box sx={{width:'32%',zIndex:99}}>
-                        <CustomSelect
-                          label="Adult"
-                          value={adult}
-                          onChange={(e) =>
-                            setAdult(
-                              typeof e.target.value === "string"
-                                ? e.target.value.split(",")
-                                : e.target.value
-                            )
-                          }
-                          options={adalts}
-                        />
-                      </Box>
-                      <Box sx={{width:'32%',zIndex:99}}>
-                        <CustomSelect
-                          label="Child"
-                          value={child}
-                          
-                          onChange={(e) =>
-                            setChild(
-                              typeof e.target.value === "string"
-                                ? e.target.value.split(",")
-                                : e.target.value
-                            )
-                          }
-                          options={childs}
-                        />
-                      </Box>
-                      <Box sx={{width:'32%',zIndex:99}}>
+                      <Stack
+                        direction="row"
+                        justifyContent="space-between"
+                        alignItems="center"
+                        flexWrap="wrap"
+                        
+                      >
+                        <Box sx={{width:'32%',zIndex:99}}>
                           <CustomSelect
-                            label="Infant"
-                            value={infant}
+                            label="Adult"
+                            value={adult}
                             onChange={(e) =>
-                              setInfant(
+                              setAdult(
                                 typeof e.target.value === "string"
                                   ? e.target.value.split(",")
                                   : e.target.value
                               )
                             }
-                            options={infants}
+                            options={adalts}
                           />
-                      </Box>
-                      <Box sx={{width:'100%',marginTop:'16px',zIndex:99}}>
+                        </Box>
+                        <Box sx={{width:'32%',zIndex:99}}>
                           <CustomSelect
-                            label="Class"
-                            value={travelClass}
+                            label="Child"
+                            value={child}
+                            
                             onChange={(e) =>
-                              setTravelClass(
+                              setChild(
                                 typeof e.target.value === "string"
                                   ? e.target.value.split(",")
                                   : e.target.value
                               )
                             }
-                            options={travelClasses}
+                            options={childs}
                           />
-                      </Box>
-                      <Box sx={{width:'100%',marginTop:'62px',zIndex:2}}>
-                        <Link href={'/flight-search'}>
-                            <Button  variant="contained" sx={{width:'100%',marginBlock:'16px',bgcolor:'secondary.main'}}>Search For Flight</Button>
-                        </Link>
-                      </Box>
-                      {tripType == 'multi-city' &&
-                        <Box sx={{width:'100%',marginTop:'8px'}}>
-                        <Button variant="contained" sx={{width:'100%',bgcolor:'secondary.main'}}>Add City</Button>
-                      </Box>
-                      }
-                    </Stack>
-                  </Box>
-                </Stack>
-            :
-               <>
+                        </Box>
+                        <Box sx={{width:'32%',zIndex:99}}>
+                            <CustomSelect
+                              label="Infant"
+                              value={infant}
+                              onChange={(e) =>
+                                setInfant(
+                                  typeof e.target.value === "string"
+                                    ? e.target.value.split(",")
+                                    : e.target.value
+                                )
+                              }
+                              options={infants}
+                            />
+                        </Box>
+                        <Box sx={{width:'100%',marginTop:'16px',zIndex:99}}>
+                            <CustomSelect
+                              label="Class"
+                              value={travelClass}
+                              onChange={(e) =>
+                                setTravelClass(
+                                  typeof e.target.value === "string"
+                                    ? e.target.value.split(",")
+                                    : e.target.value
+                                )
+                              }
+                              options={travelClasses}
+                            />
+                        </Box>
+                        <Box sx={{width:'100%',marginTop:'62px',zIndex:2}}>
+                          <Link href={'/flight-search'}>
+                              <Button  variant="contained" sx={{width:'100%',marginBlock:'16px',bgcolor:'secondary.main'}}>Search For Flight</Button>
+                          </Link>
+                        </Box>
+                        {tripType == 'multi-city' &&
+                          <Box sx={{width:'100%',marginTop:'8px'}}>
+                          <Button variant="contained" sx={{width:'100%',bgcolor:'secondary.main'}}>Add City</Button>
+                        </Box>
+                        }
+                      </Stack>
+                    </Box>
+                  </Stack>
+              :
+                <>
 
-                  <FormCard panelType={panel}/>
-               </>
-            }
-            {/* Panel End*/}
+                    <FormCard panelType={panel}/>
+                </>
+              }
+              {/* Panel End*/}
 
-          </Container>
-        </Box>
-      </Container>
+            </Container>
+          </Box>
+        </Container>
+      </Box>
     </section>
   );
 }

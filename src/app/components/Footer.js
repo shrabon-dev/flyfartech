@@ -139,40 +139,56 @@ export default function Footer() {
                 Question or feedback we would love to hear from you
                 </Typography>
                 <TextField
-                  label="Email Address"
-                  id="outlined-start-adornment"
-                  sx={{
-                    marginTop:5,
-                    width: '100%',
-                    fontFamily: "PTRootUIWebRegular",
-                  fontSize:'14px', 
-                    backgroundColor: 'transparent',
-                    '& .MuiOutlinedInput-root': {
-                      borderRadius: '50px',
-                      fontSize:'14px', 
-                      '& fieldset': {
-                        borderColor: '#E0E0E0',
-                        fontSize:'14px', 
-                      },
-                      '&:hover fieldset': {
-                        borderColor: '#BDBDBD',
-                        fontSize:'14px', 
+  label="Email Address"
+  id="outlined-start-adornment"
+  sx={{
+    marginTop: 5,
+    width: '100%',
+    fontFamily: "PTRootUIWebRegular",
+    fontSize: '14px',
+    backgroundColor: 'transparent',
+    '& .MuiInputLabel-root': {
+      color: 'white',  
+      fontSize: '14px',
+    },
+    '& .MuiInputLabel-root.Mui-focused': {
+      color: 'white',  
+    },
+    '& .MuiInputBase-input::placeholder': {
+      color: 'white',
+      opacity: 1,
+      fontSize: '14px',
+    },
+    '& .MuiOutlinedInput-root': {
+      borderRadius: '50px',
+      fontSize: '14px',
+      color: 'white',
+      '& fieldset': {
+        borderColor: 'white',
+        fontSize: '14px',
+        color: 'white',
+      },
+      '&:hover fieldset': {
+        borderColor: 'white',
+        fontSize: '14px',
+        color: 'white',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'white',
+        fontSize: '14px',
+        color: 'white',
+      },
+    },
+  }}
+  InputProps={{
+    endAdornment: (
+      <InputAdornment position="end" >
+        <SendIcon sx={{color:'white',fontSize:'28px',cursor:'pointer'}} />
+      </InputAdornment>
+    ),
+  }}
+/>
 
-                      },
-                      '&.Mui-focused fieldset': {
-                        borderColor: '#1976d2', 
-                        fontSize:'14px', 
-                      },
-                    },
-                  }}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <SendIcon />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
             </Grid>
           </Grid>
         <Box sx={{width:{xs:'100%',md:'80%',lg:'80%'},height:{xs:'auto',sm:'100px'},display:'flex',justifyContent:'center',alignItems:'center',marginTop:'30px',marginInline:'auto'}}>
