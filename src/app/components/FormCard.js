@@ -47,7 +47,7 @@ export default function FormCard({panelType}) {
         "Virginia Andrews",
         "Kelly Snyder",
       ];
-      const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
+      const handleChange = (e, newValue) => {
         setValue(newValue);
          
       };
@@ -58,7 +58,7 @@ export default function FormCard({panelType}) {
     <>
         <Stack
                       sx={{ marginBlock: "2rem" }}
-                      direction="row"
+                      direction={{ xs: "column", sm: "row" }}
                       justifyContent="center"
                       alignItems="stretch"
                     >
@@ -66,7 +66,7 @@ export default function FormCard({panelType}) {
                       <Box
                         sx={{
                           width: "100%",
-                          maxWidth: "calc(100% - 360px)",
+                          maxWidth: {xs:'100%',sm:"calc(100% - 260px)",md:"calc(100% - 360px)"},
                           bgcolor: "white",
                           padding: "20px",
                           borderRadius: "8px",
@@ -78,11 +78,11 @@ export default function FormCard({panelType}) {
                     <>
                     <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
                         
-                        <Box sx={{width:'35%'}}>
-                        <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
+                        <Box sx={{width:'35%',zIndex:99}}>
+                        <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
                             DISTINATION
                         </Typography>
-                        <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:'24px',color:'secondary.main',marginBlock:'8px'}}>
+                        <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px'},color:'secondary.main',marginBlock:'8px'}}>
                             DHAKA
                         </Typography>
                         <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px'}}>
@@ -99,7 +99,7 @@ export default function FormCard({panelType}) {
                                     borderTopLeftRadius:'0px',borderBottomLeftRadius:'0px',
                                     padding: '4px',
                                     fontFamily: 'PTRootUIWebRegular',
-                                    fontSize: '14px',
+                                    fontSize: {xs:'10px',md:'14px'},
                                     height: '30px',
                                     textTransform: 'capitalize',
                                     '& .MuiOutlinedInput-notchedOutline': {
@@ -128,11 +128,11 @@ export default function FormCard({panelType}) {
                         </Box>
                     
                         </Box>
-                        <Box sx={{width:'35%'}}>
-                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
+                        <Box sx={{width:'35%',zIndex:99}}>
+                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
                                 CHECK IN
                             </Typography>
-                            <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:'24px',color:'secondary.main',marginBlock:'8px'}}>
+                            <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px'},color:'secondary.main',marginBlock:'8px'}}>
                                 24 April 2025
                             </Typography>
                             <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px',marginTop:'8px'}}>
@@ -149,13 +149,15 @@ export default function FormCard({panelType}) {
                                         sx: {
                                         width: '100%',
                                         height: '30px',
+                                        flexDirection:'row !important',
+                                        alignItems:'center !important',
                                         backgroundColor: 'secondary.light',
                                         borderTopRightRadius: '4px',
                                         borderBottomRightRadius: '4px',
                                         borderTopLeftRadius: '0px',
                                         borderBottomLeftRadius: '0px',
                                         fontFamily: 'PTRootUIWebRegular',
-                                        fontSize: '14px',
+                                        fontSize: {xs:'8px',md:'14px'},
                                         '& .MuiOutlinedInput-notchedOutline': {
                                             border: 'none',
                                         },
@@ -168,7 +170,7 @@ export default function FormCard({panelType}) {
                                         '& input': {
                                             padding: 0,
                                             paddingLeft: '8px',
-                                            fontSize: '14px',
+                                            fontSize: {xs:'10px',md:'14px'},
                                             textTransform: 'capitalize',
                                         },
                                         },
@@ -178,11 +180,11 @@ export default function FormCard({panelType}) {
                             </LocalizationProvider>
                         </Box>
                         </Box>
-                        <Box sx={{width:'35%'}}>
-                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
+                        <Box sx={{width:'35%',zIndex:99}}>
+                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
                                 CHECK OUT
                             </Typography>
-                            <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:'24px',color:'secondary.main',marginBlock:'8px'}}>
+                            <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px'},color:'secondary.main',marginBlock:'8px'}}>
                                 24 April 2025
                             </Typography>
                             <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px',marginTop:'8px'}}>
@@ -197,6 +199,7 @@ export default function FormCard({panelType}) {
                                         notched: false,
                                         },
                                         sx: {
+                                        flexDirection: 'row !important',
                                         width: '100%',
                                         height: '30px',
                                         backgroundColor: 'secondary.light',
@@ -205,7 +208,7 @@ export default function FormCard({panelType}) {
                                         borderTopLeftRadius: '0px',
                                         borderBottomLeftRadius: '0px',
                                         fontFamily: 'PTRootUIWebRegular',
-                                        fontSize: '14px',
+                                        fontSize: {xs:'8px',md:'14px'},
                                         '& .MuiOutlinedInput-notchedOutline': {
                                             border: 'none',
                                         },
@@ -218,7 +221,7 @@ export default function FormCard({panelType}) {
                                         '& input': {
                                             padding: 0,
                                             paddingLeft: '8px',
-                                            fontSize: '14px',
+                                            fontSize: {xs:'8px',md:'14px'},
                                             textTransform: 'capitalize',
                                         },
                                         },
@@ -233,13 +236,13 @@ export default function FormCard({panelType}) {
                     :
                     <>
                         {panelType == 'TOUR' ?
-                           <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
+                        <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
                         
                            <Box sx={{width:'35%'}}>
-                           <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
+                           <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
                            DESTINATION TYPE
                            </Typography>
-                           <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:'24px',color:'secondary.main',marginBlock:'8px'}}>
+                           <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px'},color:'secondary.main',marginBlock:'8px'}}>
                            International
                            </Typography>
                            <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px'}}>
@@ -256,7 +259,7 @@ export default function FormCard({panelType}) {
                                        borderTopLeftRadius:'0px',borderBottomLeftRadius:'0px',
                                        padding: '4px',
                                        fontFamily: 'PTRootUIWebRegular',
-                                       fontSize: '14px',
+                                       fontSize: {xs:'10px',md:'14px'},
                                        height: '30px',
                                        textTransform: 'capitalize',
                                        '& .MuiOutlinedInput-notchedOutline': {
@@ -286,10 +289,10 @@ export default function FormCard({panelType}) {
                        
                            </Box>
                            <Box sx={{width:'35%'}}>
-                               <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
+                               <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
                                 WHERE?
                                </Typography>
-                               <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:'24px',color:'secondary.main',marginBlock:'8px'}}>
+                               <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px'},color:'secondary.main',marginBlock:'8px'}}>
                                Rome,Vasnis
                                </Typography>
                                <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px'}}>
@@ -306,7 +309,7 @@ export default function FormCard({panelType}) {
                                        borderTopLeftRadius:'0px',borderBottomLeftRadius:'0px',
                                        padding: '4px',
                                        fontFamily: 'PTRootUIWebRegular',
-                                       fontSize: '14px',
+                                       fontSize: {xs:'10px',md:'14px'},
                                        height: '30px',
                                        textTransform: 'capitalize',
                                        '& .MuiOutlinedInput-notchedOutline': {
@@ -335,10 +338,10 @@ export default function FormCard({panelType}) {
                            </Box>
                            </Box>
                            <Box sx={{width:'35%'}}>
-                               <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
+                               <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
                                WHEN?
                                </Typography>
-                               <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:'24px',color:'secondary.main',marginBlock:'8px'}}>
+                               <Typography variant="h3" sx={{textAlign:'left',textTransform:'uppercase',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px'},color:'secondary.main',marginBlock:'8px'}}>
                                    24 April 2025
                                </Typography>
                                <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px',marginTop:'8px'}}>
@@ -353,6 +356,7 @@ export default function FormCard({panelType}) {
                                            notched: false,
                                            },
                                            sx: {
+                                            flexDirection: 'row !important',
                                            width: '100%',
                                            height: '30px',
                                            backgroundColor: 'secondary.light',
@@ -361,7 +365,7 @@ export default function FormCard({panelType}) {
                                            borderTopLeftRadius: '0px',
                                            borderBottomLeftRadius: '0px',
                                            fontFamily: 'PTRootUIWebRegular',
-                                           fontSize: '14px',
+                                           fontSize: {xs:'8px',md:'14px'},
                                            '& .MuiOutlinedInput-notchedOutline': {
                                                border: 'none',
                                            },
@@ -374,7 +378,7 @@ export default function FormCard({panelType}) {
                                            '& input': {
                                                padding: 0,
                                                paddingLeft: '8px',
-                                               fontSize: '14px',
+                                               fontSize: {xs:'10px',md:'14px'},
                                                textTransform: 'capitalize',
                                            },
                                            },
@@ -384,16 +388,16 @@ export default function FormCard({panelType}) {
                                </LocalizationProvider>
                            </Box>
                            </Box>
-                       </Stack>
+                        </Stack>
                         :
                         <>
                             {panelType == 'VISA' ?
                             <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
                             <Box sx={{width:'45%'}}>
-                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
+                            <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
                             Destination city or country
                             </Typography>
-                            <Typography variant="h3" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'28px',color:'secondary.main',marginBlock:'8px'}}>
+                            <Typography variant="h3" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px'},color:'secondary.main',marginBlock:'8px'}}>
                             USA
                             </Typography>
                             <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px'}}>
@@ -410,7 +414,7 @@ export default function FormCard({panelType}) {
                                         borderTopLeftRadius:'0px',borderBottomLeftRadius:'0px',
                                         padding: '4px',
                                         fontFamily: 'PTRootUIWebRegular',
-                                        fontSize: '14px',
+                                        fontSize: {xs:'10px',md:'14px'},
                                         height: '30px',
                                         textTransform: 'capitalize',
                                         '& .MuiOutlinedInput-notchedOutline': {
@@ -439,10 +443,10 @@ export default function FormCard({panelType}) {
                             </Box>
                             </Box>
                             <Box sx={{width:'45%'}}>
-                                <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'14px'}}>
+                                <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
                                 Select visa type
                                 </Typography>
-                                <Typography variant="h3" sx={{textTransform:'uppercase',textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:'24px',color:'secondary.main',marginBlock:'8px'}}>
+                                <Typography variant="h3" sx={{textTransform:'uppercase',textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'12px',sm:'14px',md:'24px'},color:'secondary.main',marginBlock:'8px'}}>
                                 Tourist Visa
                                 </Typography>
                                 <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px'}}>
@@ -459,7 +463,7 @@ export default function FormCard({panelType}) {
                                         borderTopLeftRadius:'0px',borderBottomLeftRadius:'0px',
                                         padding: '4px',
                                         fontFamily: 'PTRootUIWebRegular',
-                                        fontSize: '14px',
+                                        fontSize: {xs:'10px',md:'14px'},
                                         height: '30px',
                                         textTransform: 'capitalize',
                                         '& .MuiOutlinedInput-notchedOutline': {
@@ -507,14 +511,15 @@ export default function FormCard({panelType}) {
                           padding: "20px",
                           borderRadius: "8px",
                           position: "relative",
-                          maxWidth: "360px",
+                          maxWidth:{xs:'100%',sm:'260px',md:'360px'},
                           "&::after": {
                             content: '""',
                             position: "absolute",
                             width: "100%",
                             height: "100%",
-                            borderLeft: "2px dotted",
-                            borderColor: "secondary.light",
+                            borderLeft: {xs:'none',sm:"2px dotted #a0bbd1"},
+                            borderTop: {xs:'1px dotted #a0bbd1',sm:"none"},
+                            borderColor: "secondary.light  !important",
                             top: 0,
                             left: 0,
                             zIndex: 1,

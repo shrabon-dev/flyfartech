@@ -14,11 +14,12 @@ export default function CustomSelect({ label, value, onChange, options }) {
           sx={{
             backgroundColor: 'secondary.light',
             borderRadius: '4px',
-            padding: '4px',
+            padding: {xs:'0px',md:'4px'},
             fontFamily: 'PTRootUIWebMedium',
-            fontSize: '14px',
+            fontSize: {xs:'8px',md:'14px'},
             fontStyle: 'normal',
             height: '30px',
+            zIndex: 99,
             '& .MuiOutlinedInput-notchedOutline': {
               border: 'none',
             },
@@ -26,7 +27,8 @@ export default function CustomSelect({ label, value, onChange, options }) {
               border: 'none',
             },
             '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-              border: 'none',
+            border: 'none',
+            zIndex: '999 !important',
             },
           }}
           renderValue={(selected) => {
@@ -49,7 +51,7 @@ export default function CustomSelect({ label, value, onChange, options }) {
             <em>Placeholder</em>
           </MenuItem> */}
           {options.map((option) => (
-            <MenuItem key={option} value={option}>
+            <MenuItem key={option} value={option} sx={{minHeight:{xs:'26px',md:'40px'},fontSize:{xs:'8px',md:'14px'},fontFamily: 'PTRootUIWebMedium'}}>
               {option}
             </MenuItem>
           ))}

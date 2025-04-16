@@ -16,8 +16,8 @@ export default function TripWay({type}) {
         };
   return (
     <>
-        <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
-          <Box sx={{width:'35%'}}>
+        <Stack direction={{xs:'column',sm:'row'}} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
+          <Box sx={{width:{xs:'100%',sm:'35%'}}}>
           <Typography variant="body2" sx={{fontWeight:'bold',textAlign:'center',fontFamily:'PTRootUIWebLight',fontSize:'14px'}}>
               From
           </Typography>
@@ -77,6 +77,7 @@ export default function TripWay({type}) {
                           notched: false,
                         },
                         sx: {
+                          flexDirection: 'row !important',
                           width: '100%',
                           height: '30px',
                           backgroundColor: 'secondary.light',
@@ -108,7 +109,7 @@ export default function TripWay({type}) {
               </LocalizationProvider>
           </Box>
           </Box>
-          <Box sx={{width:'25%',textAlign:'center'}}>
+          <Box sx={{width:{xs:'20%',sm:'25%'},textAlign:'center'}}>
             {type == 'one-way' ? 
                 <AirplanemodeActiveIcon sx={{fontSize:'96px',rotate:'90deg',color:'secondary.main'}}/>
             :
@@ -128,7 +129,7 @@ export default function TripWay({type}) {
             }
       
           </Box>
-          <Box sx={{width:'35%'}}>
+          <Box sx={{width:{xs:'100%',sm:'35%'}}}>
           <Typography variant="body2" sx={{fontWeight:'bold',textAlign:'center',fontFamily:'PTRootUIWebLight',fontSize:'14px'}}>
               From
           </Typography>
@@ -189,6 +190,7 @@ export default function TripWay({type}) {
                           notched: false,
                         },
                         sx: {
+                          flexDirection: 'row !important',
                           height: '30px',
                           backgroundColor: 'secondary.light',
                           borderTopRightRadius: '4px',

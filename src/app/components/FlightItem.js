@@ -22,10 +22,10 @@ export default function FlightItem({ type, onClick, flightDetails }) {
         };
   return (
     <>
-        <Stack direction={'row'} justifyContent={'space-between'} alignItems={'stretch'} sx={{marginTop:'10px'}}>
-          <Box sx={{bgcolor:'white',width:'80%',padding:'10px',borderRadius:'12px'}}>
-            <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between',}}>
-              <Box sx={{width:'22%',}}>
+        <Stack direction={{xs:'column',md:'row'}} justifyContent={'space-between'} alignItems={'stretch'} sx={{marginTop:'10px'}}>
+          <Box sx={{bgcolor:'white',width:{xs:'100%',md:'80%'},padding:'10px',borderRadius:'12px'}}>
+            <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap'}}>
+              <Box sx={{width:{xs:'48%',sm:'22%'},}}>
               <Image style={{width:'50px',height:'50px'}} src={bg} alt="bg"/>
               <Typography variant="body1" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'12px',color:'secondary.main',marginBlock:'8px'}}>
                   Biman Bangladesh
@@ -34,7 +34,7 @@ export default function FlightItem({ type, onClick, flightDetails }) {
                 BG-435
               </Typography>
               </Box>
-              <Box sx={{width:'32%',paddingLeft:'16px',}}>
+              <Box sx={{width:{xs:'48%',sm:'32%'},paddingLeft:'16px',}}>
               <Typography variant="h3" sx={{fontFamily:'PTRootUIWebRegular',fontSize:'30px',color:'secondary.main',marginBlock:'8px'}}>
                   DAC
               </Typography>
@@ -48,7 +48,7 @@ export default function FlightItem({ type, onClick, flightDetails }) {
                 Tue 15 Apr 2025
               </Typography>
               </Box>
-              <Box sx={{width:'14%',textAlign:'left',}}>
+              <Box sx={{width:{xs:'48%',sm:'14%'},textAlign:'left',}}>
                 {type == 'one-way' ? 
                     <AirplanemodeActiveIcon sx={{fontSize:'76px',rotate:'90deg',color:'secondary.main',cursor:'pointer'}}/>
                 :
@@ -69,7 +69,7 @@ export default function FlightItem({ type, onClick, flightDetails }) {
                 }
           
               </Box>
-              <Box sx={{width:'32%',paddingLeft:'16px',}}>
+              <Box sx={{width:{xs:'48%',sm:'32%'},paddingLeft:'16px',}}>
               <Typography variant="h3" sx={{fontFamily:'PTRootUIWebRegular',fontSize:'30px',color:'secondary.main',marginBlock:'8px'}}>
                   CXB
               </Typography>
@@ -84,46 +84,47 @@ export default function FlightItem({ type, onClick, flightDetails }) {
               </Typography>
               </Box>
             </Box>
-            <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'} sx={{marginTop:'20px',}}>
-            <Box sx={{width:'25%',textAlign:'center'}}>
-              <Box >
-              <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'12px',color:'secondary.dark',paddingTop:'6px'}}>
-                1h 15m
-              </Typography>
-              <Box sx={{width:'100px',height:'2px',margin:'auto',bgcolor:'secondary.dark',display:'block',position:'relative'}}>
-                <Box sx={{width:'10px',height:'10px',borderRadius:'50%',bgcolor:'secondary.dark',position:'absolute',top:'-4px',left:'-10px'}}></Box>
-                <Box sx={{width:'10px',height:'10px',borderRadius:'50%',bgcolor:'secondary.dark',position:'absolute',top:'-4px',right:'-10px'}}></Box>
-              </Box>
-              <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'12px',color:'secondary.dark',paddingTop:'6px'}}>
-                Non Stop
-              </Typography>
-              </Box>
-            </Box>
-            <Box sx={{width:'25%',}}>
-              <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'12px',color:'secondary.dark',paddingTop:'6px'}}>
-                Refundable
-              </Typography>
-            </Box>
-            <Box sx={{width:'25%',}}>
-              <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'12px',color:'secondary.dark',paddingTop:'6px'}}>
-               Class- Economy
-              </Typography>
-            </Box>
-            <Box sx={{width:'25%',}}>
-              <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'12px',color:'secondary.main',paddingTop:'6px',display:'flex',alignItems:'center',gap:'5px'}}>
-              <WorkIcon style={{ fontSize:'16px' }}/>  20 Kg
-              </Typography>
-            </Box>
+            <Stack direction={'row'} justifyContent={'space-between'} flexWrap={'wrap'} alignItems={'center'} sx={{marginTop:'20px',}}>
+                <Box sx={{width:{xs:'48%',sm:'25%'},textAlign:'center'}}>
+                  <Box >
+                  <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'12px',color:'secondary.dark',paddingTop:'6px'}}>
+                    1h 15m
+                  </Typography>
+                  <Box sx={{width:'100px',height:'2px',margin:'auto',bgcolor:'secondary.dark',display:'block',position:'relative'}}>
+                    <Box sx={{width:'10px',height:'10px',borderRadius:'50%',bgcolor:'secondary.dark',position:'absolute',top:'-4px',left:'-10px'}}></Box>
+                    <Box sx={{width:'10px',height:'10px',borderRadius:'50%',bgcolor:'secondary.dark',position:'absolute',top:'-4px',right:'-10px'}}></Box>
+                  </Box>
+                  <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'12px',color:'secondary.dark',paddingTop:'6px'}}>
+                    Non Stop
+                  </Typography>
+                  </Box>
+                </Box>
+                <Box sx={{width:{xs:'48%',sm:'25%'},}}>
+                  <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'12px',color:'secondary.dark',paddingTop:'6px'}}>
+                    Refundable
+                  </Typography>
+                </Box>
+                <Box sx={{width:{xs:'48%',sm:'25%'},}}>
+                  <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'12px',color:'secondary.dark',paddingTop:'6px'}}>
+                  Class- Economy
+                  </Typography>
+                </Box>
+                <Box sx={{width:{xs:'48%',sm:'25%'},}}>
+                  <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'12px',color:'secondary.main',paddingTop:'6px',display:'flex',alignItems:'center',gap:'5px'}}>
+                  <WorkIcon style={{ fontSize:'16px' }}/>  20 Kg
+                  </Typography>
+                </Box>
             </Stack>
          
           </Box>
-          <Box sx={{width:'20%',borderRadius:'12px',backgroundColor:'white',padding:'10px',position:'relative',  "&::after": {
+          <Box sx={{width:{xs:'100%',md:'20%'},borderRadius:'12px',backgroundColor:'white',padding:'10px',position:'relative',  "&::after": {
                         content: '""',
                         position: "absolute",
                         width: "100%",
                         height: "100%",
-                        borderLeft: "2px dotted",
-                        borderColor: "secondary.light",
+                        borderLeft: {xs:'none',md:"2px dotted #a0bbd1"},
+                        borderTop: {xs:'1px dotted #a0bbd1',md:"none"},
+                        borderColor: "secondary.light !important",
                         top: 0,
                         left: 0,
                         zIndex: 1,
@@ -140,7 +141,6 @@ export default function FlightItem({ type, onClick, flightDetails }) {
           </Box>
           </Box>
         </Stack>
-   
     </>
   )
 }

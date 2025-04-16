@@ -18,7 +18,7 @@ export default function Footer() {
       <footer>
         <Container maxWidth="lg">
           <Grid container justifyContent={'space-between'} >
-            <Grid size={4}>
+            <Grid size={{xs:12,sm:6,md:4}}>
                 <Typography variant="h3" sx={{ fontWeight: "bold",fontFamily: "PTRootUIWebRegular", fontSize: "1.2rem", color: "primary.contrastText" }}>
                   Need Help?
                 </Typography>
@@ -62,7 +62,7 @@ export default function Footer() {
             
                 </List>
             </Grid>
-            <Grid size={2}>
+            <Grid size={{xs:12,sm:6,md:2}}>
                 <Typography variant="h3" sx={{ fontWeight: "bold",fontFamily: "PTRootUIWebRegular", fontSize: "1.2rem", color: "primary.contrastText" }}>
                  Discover
                 </Typography>
@@ -118,7 +118,7 @@ export default function Footer() {
                   </Link>
                 </List>
             </Grid>
-            <Grid size={3}  >
+            <Grid size={{xs:12,sm:6,md:3}}  >
                 <Typography variant="h3" sx={{ fontWeight: "bold",fontFamily: "PTRootUIWebRegular", fontSize: "1.2rem", color: "primary.contrastText" }}>
                  Certificate
                 </Typography>
@@ -130,7 +130,7 @@ export default function Footer() {
                   <Image style={{width:'100px',height:'45px'}} src={crft5} alt="certificate_img"/>
                 </Stack>
             </Grid>
-            <Grid size={3}>
+            <Grid size={{xs:12,sm:6,md:3}}>
                 <Typography variant="h3" sx={{ fontWeight: "bold",fontFamily: "PTRootUIWebRegular", fontSize: "1.2rem", color: "primary.contrastText" }}>
                  Get In Touch
                 </Typography>
@@ -175,8 +175,8 @@ export default function Footer() {
                 />
             </Grid>
           </Grid>
-        <Box sx={{width:"100%",display:'flex',justifyContent:'center',alignItems:'center',marginTop:'30px'}}>
-          <Image className="" style={{height:'100px',width:'80%'}} src={payment} alt="payment_img"/>
+        <Box sx={{width:{xs:'100%',md:'80%',lg:'80%'},height:{xs:'auto',sm:'100px'},display:'flex',justifyContent:'center',alignItems:'center',marginTop:'30px',marginInline:'auto'}}>
+          <Image className="" style={{height:'100%',width:'100%'}} src={payment} alt="payment_img"/>
         </Box>
         <Typography sx={{fontSize:'14px',color:'primary.contrastText',textAlign:'center',marginTop:'20px',fontFamily: "PTRootUIWebRegular",borderTop:'1px solid #e0e0e0',paddingTop:'20px'}}>
         © Copyright 2025 by Fly Far Tech | B2C OTA Portal

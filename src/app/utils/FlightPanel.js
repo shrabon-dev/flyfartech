@@ -11,11 +11,7 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 import TripWay from "./TripWay";
 export default function FlightPanel({trip_type}) {
-    const [age, setAge] = useState('');
-    console.log(trip_type)
-    const handleChange = (event) => {
-      setAge(event.target.value);
-    };
+    
   return (
     <> 
         <Box sx={{width:'100%',height:'100%',borderRadius:'8px',padding:'10px'}}>

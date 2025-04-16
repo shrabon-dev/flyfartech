@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/app/components/Footer.js", "src/app/components/Header.js", "src/app/components/Hero.js", "src/app/components/HotDeal.js", "src/app/components/ImageBox.js", "src/app/utils/CustomSelect.js", "src/app/utils/FlightPanel.js", "src/app/utils/TripWay.js"  ],
   "exclude": [
     "node_modules"
   ]

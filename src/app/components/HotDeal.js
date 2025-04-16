@@ -28,14 +28,14 @@ const tabsData = [
   },
 ];
 
-function CustomTabPanel({ children, value, index }: any) {
+function CustomTabPanel({ children, value, index }) {
   return value === index ? <Box sx={{ mt: 2 }}>{children}</Box> : null;
 }
 
 export default function HotDeal() {
   const [value, setValue] = useState(0);
 
-  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (e, newValue) => {
     setValue(newValue);
   };
 
@@ -45,7 +45,7 @@ export default function HotDeal() {
         <div className="hotdeal__title">
           <Stack
             sx={{ marginBlock: "2rem" }}
-            direction="row"
+            direction={{xs:'column', sm:'row'}}
             justifyContent="space-between"
             alignItems="center"
           >
@@ -55,24 +55,26 @@ export default function HotDeal() {
                 fontWeight: "bold",
                 color: "secondary.dark",
                 fontFamily: "PTRootUIWebRegular",
-                fontSize: "24px",
+                fontSize: {xs:'16px', md:'24px'},
+                paddingBottom:{xs:'10px', md:'0px'},
               }}
             >
               Hot Deals
             </Typography>
-            <Box sx={{ border: 1, borderColor: "divider",bgcolor: "secondary.main",borderRadius:'50px',minHeight:'44px' }}>
-              <Tabs value={value} onChange={handleChange}  TabIndicatorProps={{ style: { display: "none" } }} sx={{marginTop:'6px',minHeight:'44px',textTransform: "capitalize",}}>
+            <Box sx={{ border: 1, borderColor: "divider",bgcolor: "secondary.main",borderRadius:'50px',minHeight:{xs:'30px',md:'44px'},width:{xs:'fit-content !important'}, }}>
+              <Tabs value={value} onChange={handleChange}  TabIndicatorProps={{ style: { display: "none" } }} sx={{marginTop:'6px',minHeight:{xs:'30px',md:'44px'},textTransform: "capitalize",}}>
                 {tabsData.map((tab, index) => (
                   <Tab key={index} label={tab.label}   sx={{
                     
                     bgcolor: value === index ? "secondary.dark" : "transparent",
                     color: "white", 
-                    padding: "5px 20px",
+                    padding: {xs:'0px 2px', md:'8px 12px'},
                     borderRadius: "50px",
                     fontFamily: "PTRootUIWebLight",
-                    fontSize: "14px",
+                    fontSize: {xs:'10px', md:'14px'},
                     textTransform: "capitalize",
-                    minHeight:'36px',
+                    minHeight:{xs:'24px', md:'38px'},
+                    minWidth:{xs:'50px', md:'85px'},
                     fontWeight: "bold",
                     mx: 1,
                     transition: "0.3s ease",
@@ -98,7 +100,17 @@ export default function HotDeal() {
         <Box>
           {tabsData.map((tab, index) => (
             <CustomTabPanel key={index} value={value} index={index}>
-              <Swiper spaceBetween={50} slidesPerView={3}>
+              <Swiper spaceBetween={50} slidesPerView={3}  breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                600: {
+                  slidesPerView: 2,
+                },
+                960: {
+                  slidesPerView: 3,
+                },
+              }}>
                 {tab.images.map((img, idx) => (
                   <SwiperSlide key={idx}>
                     <Image
