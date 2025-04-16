@@ -200,10 +200,10 @@ export default function DetailsofFlight({type, flightDetails, onClose}) {
                       
                       </Typography>
                       <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.dark',display:'flex',alignItems:'center'}}>
-                        <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.main'}}> {goArrival?.departureLocation}|</Typography>{goArrival?.departureAirport}
+                        <Typography component="span" variant="body1" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.main'}}> {goArrival?.departureLocation}|</Typography>{goArrival?.departureAirport}
                       </Typography>
                       <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.dark',paddingTop:'6px',display:'flex',alignItems:'center',gap:'5px'}}>
-                      <Typography variant="body2"> {dayjs(goArrival?.departureTime).format("HH.mm")}</Typography>   {dayjs(goArrival?.departureTime).format("ddd DD MMM YYYY")}
+                      <Typography component="span" variant="body1" > {dayjs(goArrival?.departureTime).format("HH.mm")}</Typography>   {dayjs(goArrival?.departureTime).format("ddd DD MMM YYYY")}
                       </Typography>
                       </Box>
                       <Box sx={{width:{xs:'100%',sm:'14%'},paddingBlock:{xs:'20px',sm:'0px'},textAlign:'left',}}>
@@ -223,10 +223,10 @@ export default function DetailsofFlight({type, flightDetails, onClose}) {
                       {goArrival?.arrival}
                       </Typography>
                       <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.dark',display:'flex',alignItems:'center',justifyContent:'start'}}>
-                        <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.main'}}>{goArrival?.arrivalLocation} |</Typography>{goArrival?.arrivalAirport}
+                        <Typography component="span" variant="body1" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.main'}}>{goArrival?.arrivalLocation} |</Typography>{goArrival?.arrivalAirport}
                       </Typography>
                       <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.dark',paddingTop:'6px',display:'flex',justifyContent:'start',alignItems:'center',gap:'5px'}}>
-                      <Typography variant="body2"> {dayjs(goArrival?.arrivalTime).format("HH.mm")}</Typography>   {dayjs(goArrival?.arrivalTime).format("ddd DD MMM YYYY")}
+                      <Typography component="span" variant="body1"> {dayjs(goArrival?.arrivalTime).format("HH.mm")}</Typography>   {dayjs(goArrival?.arrivalTime).format("ddd DD MMM YYYY")}
                       </Typography>
                       </Box>
                     </Box>
@@ -260,10 +260,10 @@ export default function DetailsofFlight({type, flightDetails, onClose}) {
                       
                       </Typography>
                       <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.dark',display:'flex',alignItems:'center'}}>
-                        <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.main'}}> {backArrival?.departureLocation}|</Typography>{backArrival?.departureAirport}
+                        <Typography component="span" variant="body1" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.main'}}> {backArrival?.departureLocation}|</Typography>{backArrival?.departureAirport}
                       </Typography>
                       <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.dark',paddingTop:'6px',display:'flex',alignItems:'center',gap:'5px'}}>
-                      <Typography variant="body2"> {dayjs(backArrival?.departureTime).format("HH.mm")}</Typography>   {dayjs(backArrival?.departureTime).format("ddd DD MMM YYYY")}
+                      <Typography component="span" variant="body1"> {dayjs(backArrival?.departureTime).format("HH.mm")}</Typography>   {dayjs(backArrival?.departureTime).format("ddd DD MMM YYYY")}
                       </Typography>
                       </Box>
                       <Box sx={{width:{xs:'100%',sm:'14%'},paddingBlock:{xs:'20px',sm:'0px'},textAlign:'left',}}>
@@ -283,10 +283,10 @@ export default function DetailsofFlight({type, flightDetails, onClose}) {
                       {backArrival?.arrival}
                       </Typography>
                       <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.dark',display:'flex',alignItems:'center',justifyContent:'start'}}>
-                        <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.main'}}>{backArrival?.arrivalLocation} |</Typography>{backArrival?.arrivalAirport}
+                        <Typography component="span" variant="body1" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.main'}}>{backArrival?.arrivalLocation} |</Typography>{backArrival?.arrivalAirport}
                       </Typography>
                       <Typography variant="body2" sx={{fontFamily:'PTRootUIWebMedium',fontSize:'14px',color:'secondary.dark',paddingTop:'6px',display:'flex',justifyContent:'start',alignItems:'center',gap:'5px'}}>
-                      <Typography variant="body2"> {dayjs(backArrival?.arrivalTime).format("HH.mm")}</Typography>   {dayjs(backArrival?.arrivalTime).format("ddd DD MMM YYYY")}
+                      <Typography component="span" variant="body1"> {dayjs(backArrival?.arrivalTime).format("HH.mm")}</Typography>   {dayjs(backArrival?.arrivalTime).format("ddd DD MMM YYYY")}
                       </Typography>
                       </Box>
                     </Box>

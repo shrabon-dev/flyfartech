@@ -166,7 +166,6 @@ export default function FlightItem({ type, onClick, flightDetails }) {
       :
       (
         <Skeleton
-        key={'default'}
         variant="rectangular"
         width="100%"
         height="150px"
