@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box, Collapse, Container, Fade, Slide, Stack, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Collapse, Container, Fade, Grow, Slide, Stack, Tab, Tabs, Typography } from "@mui/material";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -121,7 +121,7 @@ export default function HotDeal() {
                   }}>
                     {tab.images.map((img, idx) => (
                       <SwiperSlide key={idx}>
-                        <Fade direction="up" in={true} timeout={600}>
+                        <Grow in={true} timeout={600}>
                         <Image
                           src={img}
                           alt={`promotion-${index}-${idx}`}
@@ -133,7 +133,7 @@ export default function HotDeal() {
                             borderRadius: "16px",
                           }}
                         />
-                        </Fade>
+                        </Grow>
                       </SwiperSlide>
                     ))}
                   </Swiper>

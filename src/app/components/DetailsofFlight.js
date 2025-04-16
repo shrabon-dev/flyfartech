@@ -1,5 +1,5 @@
 'use client';
-import { Box, Button, FormControl, InputLabel, MenuItem, OutlinedInput, Paper, Select, Stack, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow, Typography } from "@mui/material";
+import { Box, Button, Collapse, Fade, FormControl, Grow, InputLabel, MenuItem, OutlinedInput, Paper, Select, Slide, Stack, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { GiAirplaneDeparture } from "react-icons/gi";
 import { GiAirplaneArrival } from "react-icons/gi";
@@ -65,6 +65,7 @@ export default function DetailsofFlight({type, flightDetails, onClose}) {
 
   return (
     <>
+    <Fade in={true} timeout={1000}>
     <Box sx={{ width:'100%',height:'100vh',display:'block',bgcolor:'#10101050',position:'fixed',right:'0',top:'-0px',zIndex:'99',padding:'0'}}>
       <Box   ref={popupRef} sx={{ width:{xs:'100%',md:'80%',lg:'70%',xl:'60%'},height:'100%%',marginLeft:'auto',display:'block',bgcolor:'white',boxShadow:'0 0 10px 0 #00000010',}}>
             <Box  sx={{ width:'100%',height:'90vh',overflow:'auto',scrollbarWidth: 'none','&::-webkit-scrollbar': {display: 'none',},marginLeft:'auto',display:'block',bgcolor:'white',boxShadow:'0 0 10px 0 #00000010',zIndex:'99',paddingInline:{xs:'10px',sm:'30px'} }}>
@@ -357,6 +358,7 @@ export default function DetailsofFlight({type, flightDetails, onClose}) {
       </Box>
     
     </Box>
+    </Fade>
     </>
   )
 }
