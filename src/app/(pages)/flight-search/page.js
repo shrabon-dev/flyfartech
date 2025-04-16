@@ -11,6 +11,7 @@ import Filter from "../../components/Filter";
 import Image from "next/image";
 import bs from '../../assets/images/BS.png'
 import bg from '../../assets/images/BG.png'
+ 
 export default function FlightSearch() {
 
 
