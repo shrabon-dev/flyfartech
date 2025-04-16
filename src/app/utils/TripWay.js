@@ -54,8 +54,9 @@ export default function TripWay({type}) {
                     },
                   }}
                   renderValue={(selected) => {
-                    if (!selected) {
-                      return <>ShaJalal</>;
+                    if (!selected && inputInfo.bangladeshAirports.length > 0) {
+                      const firstAirport = inputInfo.bangladeshAirports[0];
+                      return `${firstAirport.name} (${firstAirport.city})`;
                     }
                   
                     return selected;
@@ -169,8 +170,9 @@ export default function TripWay({type}) {
                     },
                   }}
                   renderValue={(selected) => {
-                    if (!selected) {
-                      return <>ShaJalal</>;
+                    if (!selected && inputInfo.bangladeshAirports.length > 0) {
+                      const firstAirport = inputInfo.bangladeshAirports[0];
+                      return `${firstAirport.name} (${firstAirport.city})`;
                     }
                   
                     return selected;

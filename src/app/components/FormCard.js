@@ -115,10 +115,11 @@ export default function FormCard({panelType}) {
                                 },
                                 }}
                                 renderValue={(selected) => {
-                                if (!selected) {
-                                    return <>ShaJalal</>; 
-                                }
-                                return selected;  
+                                    if (!selected && inputInfo.bangladeshAirports.length > 0) {
+                                        const firstAirport = inputInfo.bangladeshAirports[0];
+                                        return `${firstAirport.name} (${firstAirport.city})`;
+                                      }
+                                    return selected;  
                                 }}
                             >
                                 {inputInfo.bangladeshAirports.map((airport) => (
@@ -276,9 +277,10 @@ export default function FormCard({panelType}) {
                                        },
                                    }}
                                    renderValue={(selected) => {
-                                       if (!selected) {
-                                       return <>ShaJalal</>;
-                                       }
+                                        if (!selected && inputInfo.bangladeshAirports.length > 0) {
+                                        const firstAirport = inputInfo.bangladeshAirports[0];
+                                        return `${firstAirport.name} (${firstAirport.city})`;
+                                        }
                                    
                                        return selected;
                                    }}
@@ -328,9 +330,10 @@ export default function FormCard({panelType}) {
                                        },
                                    }}
                                    renderValue={(selected) => {
-                                       if (!selected) {
-                                       return <>ShaJalal</>;
-                                       }
+                                        if (!selected && inputInfo.bangladeshAirports.length > 0) {
+                                        const firstAirport = inputInfo.bangladeshAirports[0];
+                                        return `${firstAirport.name} (${firstAirport.city})`;
+                                        }
                                    
                                        return selected;
                                    }}
@@ -435,9 +438,10 @@ export default function FormCard({panelType}) {
                                         },
                                     }}
                                     renderValue={(selected) => {
-                                        if (!selected) {
-                                        return <>ShaJalal</>;
-                                        }
+                                        if (!selected && inputInfo.bangladeshAirports.length > 0) {
+                                            const firstAirport = inputInfo.bangladeshAirports[0];
+                                            return `${firstAirport.name} (${firstAirport.city})`;
+                                          }
                                     
                                         return selected;
                                     }}
@@ -486,8 +490,9 @@ export default function FormCard({panelType}) {
                                         },
                                     }}
                                     renderValue={(selected) => {
-                                        if (!selected) {
-                                        return <>ShaJalal</>;
+                                        if (!selected && inputInfo.bangladeshAirports.length > 0) {
+                                            const firstAirport = inputInfo.bangladeshAirports[0];
+                                            return `${firstAirport.name} (${firstAirport.city})`;
                                         }
                                     
                                         return selected;
