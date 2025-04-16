@@ -11,9 +11,9 @@ export const metadata = {
   description: "Welcome to the homepage of Fly Far Tech.",
   icons: {
     icon: [
-      { url: favicon, type: "image/x-icon" },
-      { url: favicon, type: "image/png", sizes: "32x32" },
-      { url: favicon, type: "image/svg+xml", sizes: "any" },
+      { url: '../assets/images/favicon62.png', type: "image/x-icon" },
+      { url: '../assets/images/favicon62.png', type: "image/png", sizes: "32x32" },
+      { url: '../assets/images/favicon62.png', type: "image/png", sizes: "any" },
     ],
   },
 };

@@ -9,7 +9,8 @@ import theme from "../theme/theme";
 import 'swiper/css';
 import { Provider } from "react-redux";
 import { store } from "../store";
-// import favicon from '../assets/images/favicon62.png';
+import Head from "next/head";
+import favicon from '../assets/images/favicon62.png';
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,6 +25,9 @@ const geistMono = Geist_Mono({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+          <Head>
+          <link rel="icon" href='/images/favicon62.png' />
+          </Head>
           <body className={`${geistSans.variable} ${geistMono.variable}`}>
             <Provider store={store} >
             <ThemeProvider theme={theme}>
