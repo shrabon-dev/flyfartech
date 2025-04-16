@@ -9,6 +9,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
+import inputInfo from "./InputInfo";
 export default function TripWay({type}) {
         const [age, setAge] = useState('');
         const handleChange = (event) => {
@@ -59,9 +60,11 @@ export default function TripWay({type}) {
                     return selected;
                   }}
                 >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                    {inputInfo.bangladeshAirports.map((airport) => (
+                    <MenuItem key={airport.code} value={airport.code}>
+                        {airport.name} ({airport.city})
+                    </MenuItem>
+                    ))}
               </Select>
               </FormControl>
           </Box>
@@ -172,9 +175,11 @@ export default function TripWay({type}) {
                     return selected;
                   }}
                 >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                    {inputInfo.bangladeshAirports.map((airport) => (
+                      <MenuItem key={airport.code} value={airport.code}>
+                          {airport.name} ({airport.city})
+                      </MenuItem>
+                    ))}
               </Select>
               </FormControl>
           </Box>

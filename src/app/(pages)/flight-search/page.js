@@ -88,11 +88,31 @@ export default function FlightSearch() {
                 </Box>
               </Box>
               <Box className="item_list">
+                 {flights?
+                 (
+                  Array.from({ length: 6 }).map((_, i) => (
+                    <FlightItem flightDetails={flights} onClick={handleOpenPopup}  type={tripType}/> 
+                  ))
+                 )
+                 :
+                  (
+                    Array.from({ length: 6 }).map((_, i) => (
+                      <Skeleton
+                        key={i}
+                        variant="rectangular"
+                        width="100%"
+                        height="150px"
+                        sx={{ mb: 2 }}
+                        />
+                    ))
+                  )
+                 }
+                   
+                {/* <FlightItem flightDetails={flights} onClick={handleOpenPopup}  type={tripType}/>              
                 <FlightItem flightDetails={flights} onClick={handleOpenPopup}  type={tripType}/>              
                 <FlightItem flightDetails={flights} onClick={handleOpenPopup}  type={tripType}/>              
                 <FlightItem flightDetails={flights} onClick={handleOpenPopup}  type={tripType}/>              
-                <FlightItem flightDetails={flights} onClick={handleOpenPopup}  type={tripType}/>              
-                <FlightItem flightDetails={flights} onClick={handleOpenPopup}  type={tripType}/>              
+                <FlightItem flightDetails={flights} onClick={handleOpenPopup}  type={tripType}/>               */}
               </Box>
             </Grid>
           </Grid>

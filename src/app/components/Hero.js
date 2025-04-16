@@ -168,7 +168,7 @@ export default function Hero() {
                           flexDirection: "row",
                           textTransform: "capitalize",
                           minHeight: {xs:'28px',md:"36px"},
-                          minWidth: {xs:"auto",sm:"90px"},
+                          minWidth: {xs:"auto",sm:"90px",md:"150px"},
                           fontWeight: "bold",
                           mx: 1,
                           transition: "0.3s ease",
@@ -324,9 +324,9 @@ export default function Hero() {
                             />
                         </Box>
                         <Box sx={{width:'100%',marginTop:'62px',zIndex:2}}>
-                          <Link href={'/flight-search'}>
+                          <a href={'/flight-search'} >
                               <Button  variant="contained" sx={{width:'100%',marginBlock:'16px',bgcolor:'secondary.main'}}>Search For Flight</Button>
-                          </Link>
+                          </a>
                         </Box>
                         {tripType == 'multi-city' &&
                           <Box sx={{width:'100%',marginTop:'8px'}}>

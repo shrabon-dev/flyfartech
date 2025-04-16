@@ -24,6 +24,7 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 import TravelExploreOutlinedIcon from '@mui/icons-material/TravelExploreOutlined';
 import CustomSelect from "../utils/CustomSelect";
+import inputInfo from "../utils/InputInfo";
 export default function FormCard({panelType}) {
 
       const [value, setValue] = useState(0);
@@ -77,7 +78,6 @@ export default function FormCard({panelType}) {
                     {panelType == 'HOTEL' ?
                     <>
                     <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}  gap={2} sx={{marginTop:'10px'}}>
-                        
                         <Box sx={{width:'35%',zIndex:99}}>
                         <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebRegular',fontSize:{xs:'10px',md:'14px'}}}>
                             DISTINATION
@@ -87,42 +87,45 @@ export default function FormCard({panelType}) {
                         </Typography>
                         <Box sx={{ minWidth: '100%',position:'relative',display:'flex',alignItems:'center',gap:'0px'}}>
                             <Box sx={{bgcolor:'secondary.main',color:'white',height:'30px',width:'30px',padding:'2px',borderTopLeftRadius:'4px',borderBottomLeftRadius:'4px'}}><LocationPinIcon /></Box>
-                            <FormControl fullWidth sx={{ position: 'relative',height:'30px',zIndex:9999 }}>
-                                <Select
+                            <FormControl fullWidth sx={{ position: 'relative', height: '30px', zIndex: 9999 }}>
+                            <Select
                                 value={fromLocation}
                                 onChange={handleLChange}
                                 displayEmpty
-                                input={<OutlinedInput   notched={false} />}
+                                input={<OutlinedInput notched={false} />}
                                 sx={{
-                                    backgroundColor: 'secondary.light',
-                                    borderTopRightRadius:'4px',borderBottomRightRadius:'4px',
-                                    borderTopLeftRadius:'0px',borderBottomLeftRadius:'0px',
-                                    padding: '4px',
-                                    fontFamily: 'PTRootUIWebRegular',
-                                    fontSize: {xs:'10px',md:'14px'},
-                                    height: '30px',
-                                    textTransform: 'capitalize',
-                                    '& .MuiOutlinedInput-notchedOutline': {
+                                backgroundColor: 'secondary.light',
+                                borderTopRightRadius: '4px',
+                                borderBottomRightRadius: '4px',
+                                borderTopLeftRadius: '0px',
+                                borderBottomLeftRadius: '0px',
+                                padding: '4px',
+                                fontFamily: 'PTRootUIWebRegular',
+                                fontSize: { xs: '10px', md: '14px' },
+                                height: '30px',
+                                textTransform: 'capitalize',
+                                '& .MuiOutlinedInput-notchedOutline': {
                                     border: 'none',
-                                    },
-                                    '&:hover .MuiOutlinedInput-notchedOutline': {
+                                },
+                                '&:hover .MuiOutlinedInput-notchedOutline': {
                                     border: 'none',
-                                    },
-                                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                },
+                                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
                                     border: 'none',
-                                    },
+                                },
                                 }}
                                 renderValue={(selected) => {
-                                    if (!selected) {
-                                    return <>ShaJalal</>;
-                                    }
-                                
-                                    return selected;
+                                if (!selected) {
+                                    return <>ShaJalal</>; 
+                                }
+                                return selected;  
                                 }}
-                                >
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
+                            >
+                                {inputInfo.bangladeshAirports.map((airport) => (
+                                <MenuItem key={airport.code} value={airport.code}>
+                                    {airport.name} ({airport.city})
+                                </MenuItem>
+                                ))}
                             </Select>
                             </FormControl>
                         </Box>

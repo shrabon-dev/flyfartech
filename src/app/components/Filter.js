@@ -25,7 +25,7 @@ export default function Filter() {
       };
   return (
     <>
-        <Box className="filter_bar" sx={{bgcolor:'white', color:'secondary.dark',width:'100%',height:'100%',boxShadow:'0 0 50px #10101010',border:'1px solid #cccccc', padding:'10px 20px', borderRadius:'5px'}}>
+        <Box className="filter_bar" sx={{bgcolor:'white', color:'secondary.dark',width:'100%',height:'fit-content',boxShadow:'0 0 50px #10101010',border:'1px solid #cccccc', padding:'10px 20px', borderRadius:'5px'}}>
                 <Box sx={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
                   <Typography sx={{fontSize:'14px',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',textTransform:'uppercase'}}>Filter</Typography>
                   <Button variant="text" sx={{fontSize:'14px',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',textTransform:'uppercase'}}>RESET</Button>
