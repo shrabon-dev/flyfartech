@@ -295,7 +295,7 @@ export default function FormCard({panelType}) {
                            </Box>
                        
                            </Box>
-                           <Box sx={{width:{xs:'100%',sm:'35%'},zIndex:'99'}}>
+                           <Box sx={{width:{xs:'100%',sm:'32%'},zIndex:'99'}}>
                                <Typography variant="body2" sx={{textAlign:'left',fontFamily:'PTRootUIWebMedium',color:'secondary.dark',fontSize:{xs:'10px',md:'14px'}}}>
                                 WHERE?
                                </Typography>
