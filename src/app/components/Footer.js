@@ -63,56 +63,56 @@ export default function Footer() {
                 </List>
             </Grid>
             <Grid size={{xs:12,sm:6,md:2}}>
-                <Typography variant="h3" sx={{ fontWeight: "bold",fontFamily: "PTRootUIWebRegular", fontSize: "1.2rem", color: "primary.contrastText" }}>
+                <Typography variant="h3" sx={{ fontWeight: "bold",fontFamily: "PTRootUIWebRegular", fontSize: "1.2rem", color: "primary.contrastText", }}>
                  Discover
                 </Typography>
                 <List>
-                  <Link  href="/about" passHref legacyBehavior>
+                  <Link  href="/about" passHref >
+                    <ListItem  sx={{fontSize:'14px',padding:'0',}}  component={"a"} >
+                      <ListItemText primary={
+                        <Typography  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText',display:'inline-block',borderBottom:'1px solid transparent',transitionDuration:'2600','&:hover':{color:'primary.main',borderColor:'white'},}} >About Us</Typography>
+                      }/>
+                    </ListItem>
+                  </Link>
+                  <Link href="/about" passHref >
                     <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
                       <ListItemText primary={
-                        <Typography  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText',}} >About Us</Typography>
+                        <Typography  sx={{fontSize:'14px',color:'primary.contrastText',display:'inline-block',borderBottom:'1px solid transparent',transitionDuration:'2600','&:hover':{color:'primary.main',borderColor:'white'},}} >Contact Us</Typography>
+                      }/>
+                    </ListItem>
+                  </Link>
+                  <Link href="/about" passHref >
+                    <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
+                      <ListItemText primary={
+                        <Typography  sx={{fontSize:'14px',color:'primary.contrastText',display:'inline-block',borderBottom:'1px solid transparent',transitionDuration:'2600','&:hover':{color:'primary.main',borderColor:'white'},}} >Payment Method</Typography>
+                      }/>
+                    </ListItem>
+                  </Link>
+                  <Link href="/about" passHref >
+                    <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
+                      <ListItemText primary={
+                        <Typography  sx={{fontSize:'14px',color:'primary.contrastText',borderBottom:'1px solid transparent',transitionDuration:'2600','&:hover':{color:'primary.main',borderColor:'white'},}} >Terms & Condition</Typography>
+                      }/>
+                    </ListItem>
+                  </Link>
+                  <Link href="/about" passHref >
+                    <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
+                      <ListItemText primary={
+                        <Typography  sx={{fontSize:'14px',color:'primary.contrastText',display:'inline-block',borderBottom:'1px solid transparent',transitionDuration:'2600','&:hover':{color:'primary.main',borderColor:'white'},}} >Privacy & Policy</Typography>
                       }/>
                     </ListItem>
                   </Link>
                   <Link href="/about" passHref legacyBehavior>
                     <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
                       <ListItemText primary={
-                        <Typography  sx={{fontSize:'14px',color:'primary.contrastText'}} >Contact Us</Typography>
+                        <Typography  sx={{fontSize:'14px',color:'primary.contrastText',display:'inline-block',borderBottom:'1px solid transparent',transitionDuration:'2600','&:hover':{color:'primary.main',borderColor:'white'},}} >Refund & Cancellation</Typography>
                       }/>
                     </ListItem>
                   </Link>
-                  <Link href="/about" passHref legacyBehavior>
+                  <Link href="/about" passHref >
                     <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
                       <ListItemText primary={
-                        <Typography  sx={{fontSize:'14px',color:'primary.contrastText'}} >Payment Method</Typography>
-                      }/>
-                    </ListItem>
-                  </Link>
-                  <Link href="/about" passHref legacyBehavior>
-                    <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
-                      <ListItemText primary={
-                        <Typography  sx={{fontSize:'14px',color:'primary.contrastText'}} >Terms & Condition</Typography>
-                      }/>
-                    </ListItem>
-                  </Link>
-                  <Link href="/about" passHref legacyBehavior>
-                    <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
-                      <ListItemText primary={
-                        <Typography  sx={{fontSize:'14px',color:'primary.contrastText'}} >Privacy & Policy</Typography>
-                      }/>
-                    </ListItem>
-                  </Link>
-                  <Link href="/about" passHref legacyBehavior>
-                    <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
-                      <ListItemText primary={
-                        <Typography  sx={{fontSize:'14px',color:'primary.contrastText'}} >Refund & Cancellation</Typography>
-                      }/>
-                    </ListItem>
-                  </Link>
-                  <Link href="/about" passHref legacyBehavior>
-                    <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
-                      <ListItemText primary={
-                        <Typography  sx={{fontSize:'14px',color:'primary.contrastText'}} >Policy</Typography>
+                        <Typography  sx={{fontSize:'14px',color:'primary.contrastText',display:'inline-block',borderBottom:'1px solid transparent',transitionDuration:'2600','&:hover':{color:'primary.main',borderColor:'white'},}} >Policy</Typography>
                       }/>
                     </ListItem>
                   </Link>
@@ -139,55 +139,55 @@ export default function Footer() {
                 Question or feedback we would love to hear from you
                 </Typography>
                 <TextField
-  label="Email Address"
-  id="outlined-start-adornment"
-  sx={{
-    marginTop: 5,
-    width: '100%',
-    fontFamily: "PTRootUIWebRegular",
-    fontSize: '14px',
-    backgroundColor: 'transparent',
-    '& .MuiInputLabel-root': {
-      color: 'white',  
-      fontSize: '14px',
-    },
-    '& .MuiInputLabel-root.Mui-focused': {
-      color: 'white',  
-    },
-    '& .MuiInputBase-input::placeholder': {
-      color: 'white',
-      opacity: 1,
-      fontSize: '14px',
-    },
-    '& .MuiOutlinedInput-root': {
-      borderRadius: '50px',
-      fontSize: '14px',
-      color: 'white',
-      '& fieldset': {
-        borderColor: 'white',
-        fontSize: '14px',
-        color: 'white',
-      },
-      '&:hover fieldset': {
-        borderColor: 'white',
-        fontSize: '14px',
-        color: 'white',
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: 'white',
-        fontSize: '14px',
-        color: 'white',
-      },
-    },
-  }}
-  InputProps={{
-    endAdornment: (
-      <InputAdornment position="end" >
-        <SendIcon sx={{color:'white',fontSize:'28px',cursor:'pointer'}} />
-      </InputAdornment>
-    ),
-  }}
-/>
+                label="Email Address"
+                id="outlined-start-adornment"
+                sx={{
+                  marginTop: 5,
+                  width: '100%',
+                  fontFamily: "PTRootUIWebRegular",
+                  fontSize: '14px',
+                  backgroundColor: 'transparent',
+                  '& .MuiInputLabel-root': {
+                    color: 'white',  
+                    fontSize: '14px',
+                  },
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: 'white',  
+                  },
+                  '& .MuiInputBase-input::placeholder': {
+                    color: 'white',
+                    opacity: 1,
+                    fontSize: '14px',
+                  },
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '50px',
+                    fontSize: '14px',
+                    color: 'white',
+                    '& fieldset': {
+                      borderColor: 'white',
+                      fontSize: '14px',
+                      color: 'white',
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'white',
+                      fontSize: '14px',
+                      color: 'white',
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'white',
+                      fontSize: '14px',
+                      color: 'white',
+                    },
+                  },
+                }}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end" >
+                      <SendIcon sx={{color:'white',fontSize:'28px',cursor:'pointer'}} />
+                    </InputAdornment>
+                  ),
+                }}
+              />
 
             </Grid>
           </Grid>
