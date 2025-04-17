@@ -67,49 +67,49 @@ export default function Footer() {
                  Discover
                 </Typography>
                 <List>
-                  <Link  href="/about" passHref >
+                  <Link  href="/flight-search" passHref >
                     <ListItem  sx={{fontSize:'14px',padding:'0',}}  component={"a"} >
                       <ListItemText primary={
                         <Typography  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText',display:'inline-block',borderBottom:'1px solid transparent',transitionDuration:'2600','&:hover':{color:'primary.main',borderColor:'white'},}} >About Us</Typography>
                       }/>
                     </ListItem>
                   </Link>
-                  <Link href="/about" passHref >
+                  <Link href="/flight-search" passHref >
                     <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
                       <ListItemText primary={
                         <Typography  sx={{fontSize:'14px',color:'primary.contrastText',display:'inline-block',borderBottom:'1px solid transparent',transitionDuration:'2600','&:hover':{color:'primary.main',borderColor:'white'},}} >Contact Us</Typography>
                       }/>
                     </ListItem>
                   </Link>
-                  <Link href="/about" passHref >
+                  <Link href="/flight-search" passHref >
                     <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
                       <ListItemText primary={
                         <Typography  sx={{fontSize:'14px',color:'primary.contrastText',display:'inline-block',borderBottom:'1px solid transparent',transitionDuration:'2600','&:hover':{color:'primary.main',borderColor:'white'},}} >Payment Method</Typography>
                       }/>
                     </ListItem>
                   </Link>
-                  <Link href="/about" passHref >
+                  <Link href="/flight-search" passHref >
                     <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
                       <ListItemText primary={
                         <Typography  sx={{fontSize:'14px',color:'primary.contrastText',borderBottom:'1px solid transparent',transitionDuration:'2600','&:hover':{color:'primary.main',borderColor:'white'},}} >Terms & Condition</Typography>
                       }/>
                     </ListItem>
                   </Link>
-                  <Link href="/about" passHref >
+                  <Link href="/flight-search" passHref >
                     <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
                       <ListItemText primary={
                         <Typography  sx={{fontSize:'14px',color:'primary.contrastText',display:'inline-block',borderBottom:'1px solid transparent',transitionDuration:'2600','&:hover':{color:'primary.main',borderColor:'white'},}} >Privacy & Policy</Typography>
                       }/>
                     </ListItem>
                   </Link>
-                  <Link href="/about" passHref legacyBehavior>
+                  <Link href="/flight-search" passHref legacyBehavior>
                     <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
                       <ListItemText primary={
                         <Typography  sx={{fontSize:'14px',color:'primary.contrastText',display:'inline-block',borderBottom:'1px solid transparent',transitionDuration:'2600','&:hover':{color:'primary.main',borderColor:'white'},}} >Refund & Cancellation</Typography>
                       }/>
                     </ListItem>
                   </Link>
-                  <Link href="/about" passHref >
+                  <Link href="/flight-search" passHref >
                     <ListItem  sx={{fontSize:'14px',padding:'0',color:'primary.contrastText'}}  component={"a"} >
                       <ListItemText primary={
                         <Typography  sx={{fontSize:'14px',color:'primary.contrastText',display:'inline-block',borderBottom:'1px solid transparent',transitionDuration:'2600','&:hover':{color:'primary.main',borderColor:'white'},}} >Policy</Typography>
