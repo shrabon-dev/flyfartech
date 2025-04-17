@@ -25,6 +25,7 @@ import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 import TravelExploreOutlinedIcon from '@mui/icons-material/TravelExploreOutlined';
 import CustomSelect from "../utils/CustomSelect";
 import inputInfo from "../utils/InputInfo";
+import Link from "next/link";
 export default function FormCard({panelType}) {
 
       const [value, setValue] = useState(0);
@@ -36,18 +37,7 @@ export default function FormCard({panelType}) {
       const [infant, setInfant] = useState([]);
       const [travelClass, setTravelClass] = useState([]);
     
-      const names = [
-        "Oliver Hansen",
-        "Van Henry",
-        "April Tucker",
-        "Ralph Hubbard",
-        "Omar Alexander",
-        "Carlos Abbott",
-        "Miriam Wagner",
-        "Bradley Wilkerson",
-        "Virginia Andrews",
-        "Kelly Snyder",
-      ];
+   
       const handleChange = (e, newValue) => {
         setValue(newValue);
          
@@ -595,21 +585,30 @@ export default function FormCard({panelType}) {
                          
                           {panelType == 'HOTEL' &&
                             <Box sx={{width:'100%',marginTop:'24px',zIndex:'99'}}>
-                                <Button variant="contained" sx={{width:'100%',marginBlock:'16px',bgcolor:'secondary.main'}}>Search For Hotel</Button>
+                                  <Link href={'/flight-search'} passHref>
+                                      <Button variant="contained" sx={{width:'100%',marginBlock:'16px',bgcolor:'secondary.main'}}>Search For Hotel</Button>
+                                  </Link>
+
                             </Box>
                           }
                           {panelType == 'VISA' &&
-                            <Box sx={{width:'100%',marginTop:'24px'}}>
-                                <Button variant="contained" sx={{width:'100%',marginBlock:'16px',bgcolor:'secondary.main'}}>Search For Tour</Button>
+                            <Box sx={{width:'100%',marginTop:'24px',zIndex:'99'}}>
+                                  <Link href={'/flight-search'} passHref>
+                                      <Button variant="contained" sx={{width:'100%',marginBlock:'16px',bgcolor:'secondary.main'}}>Search For Tour</Button>
+                                  </Link>
                             </Box>
                           }
                           {panelType == 'TOUR' &&
                           <>
                             <Box sx={{width:'100%',marginTop:'8px',zIndex:99}}>
-                                <Button variant="contained" sx={{width:'100%',bgcolor:'secondary.main'}}>Search For All Tour</Button>
+                                <Link href={'/flight-search'} passHref>
+                                    <Button variant="contained" sx={{width:'100%',bgcolor:'secondary.main'}}>Search For All Tour</Button>
+                                </Link>
                             </Box>
                             <Box sx={{width:'100%',marginTop:'8px',zIndex:99}}>
+                            <Link href={'/flight-search'} passHref>
                                 <Button variant="contained" sx={{width:'100%',bgcolor:'secondary.main'}}>Search For Tour</Button>
+                            </Link>
                             </Box>
                           </>
                           }

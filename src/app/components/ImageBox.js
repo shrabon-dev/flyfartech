@@ -3,7 +3,7 @@ import { Box, Container, Fade, IconButton } from "@mui/material";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules"; // Import Navigation module
+import { Navigation,Autoplay  } from "swiper/modules"; // Import Navigation module
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -62,16 +62,20 @@ export default function ImageBox() {
             </Box>
 
             <Swiper
-              modules={[Navigation]}
+              modules={[Navigation, Autoplay]}
               spaceBetween={50}
               slidesPerView={1}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}  
               loop={true}
               navigation={{
                 prevEl: prevRef.current,
                 nextEl: nextRef.current,
               }}
               onBeforeInit={(swiper) => {
-                // Link Swiper with custom buttons
                 swiper.params.navigation.prevEl = prevRef.current;
                 swiper.params.navigation.nextEl = nextRef.current;
               }}

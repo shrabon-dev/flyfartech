@@ -68,8 +68,8 @@ export default function FlightSearch() {
                     <Button sx={{textAlign:"center",borderRadius:'6px',fontFamily:'PTRootUIWebMedium',bgcolor:'secondary.dark',fontSize:'12px',cursor:'pointer',zIndex:'9'}} variant="contained">Filter</Button>
                 </Box>
               </Box>
-              <Box className="search__header" sx={{bgcolor:'white', color:'secondary.dark', borderRadius:'8px',display:'flex',alignItems:'center',justifyContent:'space-between',marginTop:'10px'}}>
-                <Box sx={{display:'flex',alignItems:'center',gap:'6px',width:'50%',transitionDuration:'.3s',padding:'10px 20px',cursor:'pointer','&:hover':{bgcolor:'primary.light',}}}>
+              <Box className="search__header" sx={{bgcolor:'white', color:'secondary.dark', borderRadius:'8px',overflow:'hidden',display:'flex',alignItems:'center',justifyContent:'space-between',marginTop:'10px'}}>
+                <Box sx={{display:'flex',alignItems:'center',gap:'6px',width:'50%',transitionDuration:'.3s',padding:'10px 20px',cursor:'pointer','&:hover':{bgcolor:'secondary.light',}}}>
                   <Box>
                     <Image style={{width:'40px',height:'40px'}} src={bs} alt="bs img"/>
                   </Box>
@@ -78,7 +78,7 @@ export default function FlightSearch() {
                     <Typography sx={{fontFamily:'',fontSize:'14px',color:'secondary.main'}}>BDT 14205.00</Typography>
                   </Box>
                 </Box>
-                <Box sx={{display:'flex',alignItems:'center',gap:'6px',width:'50%',transitionDuration:'.3s',padding:'10px 20px',cursor:'pointer','&:hover':{bgcolor:'primary.light', }}}>
+                <Box sx={{display:'flex',alignItems:'center',gap:'6px',width:'50%',transitionDuration:'.3s',padding:'10px 20px',cursor:'pointer','&:hover':{bgcolor:'secondary.light', }}}>
                   <Box>
                     <Image style={{width:'40px',height:'40px'}} src={bg} alt="bg img"/>
                   </Box>

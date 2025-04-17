@@ -16,6 +16,7 @@ import imgEight from "../assets/images/hotdeal/hotdealtourimg2.webp";
 import imgNine from "../assets/images/hotdeal/hotdealtourimg3.webp";
 import imgTen from "../assets/images/hotdeal/hotdealvisaimg1.webp";
 import imgEleven from "../assets/images/hotdeal/hotdealvisaimg2.webp";
+import { Autoplay } from "swiper/modules";
 
 const tabsData = [
   {
@@ -108,7 +109,11 @@ export default function HotDeal() {
             <Box>
               {tabsData.map((tab, index) => (
                 <CustomTabPanel key={index} value={value} index={index}>
-                  <Swiper spaceBetween={50} slidesPerView={3} loop={true} breakpoints={{
+                  <Swiper spaceBetween={50}   modules={[Autoplay]}  autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}   slidesPerView={3} loop={true} breakpoints={{
                     0: {
                       slidesPerView: 1,
                     },
