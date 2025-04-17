@@ -109,7 +109,7 @@ export default function HotDeal() {
             <Box>
               {tabsData.map((tab, index) => (
                 <CustomTabPanel key={index} value={value} index={index}>
-                  <Swiper spaceBetween={50}   modules={[Autoplay]}  autoplay={{
+                  <Swiper spaceBetween={50}   modules={[Autoplay]} speed={500}  autoplay={{
                 delay: 4000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
