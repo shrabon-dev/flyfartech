@@ -173,7 +173,7 @@ export default function Hero() {
                           flexDirection: "row",
                           textTransform: "capitalize",
                           minHeight: {xs:'28px',md:"36px"},
-                          minWidth: {xs:"auto",sm:"90px",md:"150px"},
+                          minWidth: {xs:"54px",sm:"90px",md:"150px"},
                           fontWeight: "bold",
                           mx: 1,
                           transition: "0.3s ease",

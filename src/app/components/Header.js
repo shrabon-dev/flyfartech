@@ -27,10 +27,10 @@ export default function Header() {
 
                   {/* Buttons */}
                   <Grid size={{xs:9,lg:4,}}
-                      sx={{ display: "flex", justifyContent: "flex-end", gap: 2 }}
+                      sx={{ display: "flex", justifyContent: "flex-end", gap:{xs:1,sm:2} }}
                   >
-                      <Button  variant="contained" sx={{fontFamily:'PTRootUIWebRegular',fontSize:{xs:'7px',sm:'14px'}, borderRadius: '30px',backgroundColor: 'secondary.main','&:hover': {backgroundColor: 'secondary.dark',},padding:{xs:'0px 0px',sm:'8px 16px'}}}>Travel Agency</Button>
-                      <Button  sx={{fontFamily:'PTRootUIWebRegular',fontSize:{xs:'7px',sm:'14px'}, borderRadius: '30px',backgroundColor: 'secondary.dark','&:hover': {backgroundColor: 'secondary.main',},}} variant="contained">Login / Signup</Button>
+                      <Button  variant="contained" sx={{fontFamily:'PTRootUIWebRegular',fontSize:{xs:'8px',sm:'14px'}, borderRadius: '30px',backgroundColor: 'secondary.main','&:hover': {backgroundColor: 'secondary.dark',},padding:{xs:'0px 8px',sm:'8px 16px'}}}>Travel Agency</Button>
+                      <Button  sx={{fontFamily:'PTRootUIWebRegular',fontSize:{xs:'8px',sm:'14px'}, borderRadius: '30px',backgroundColor: 'secondary.dark','&:hover': {backgroundColor: 'secondary.main',},}} variant="contained">Login / Signup</Button>
                   </Grid>
                   </Grid>
               </Container>
