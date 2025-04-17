@@ -110,7 +110,7 @@ export default function HotDeal() {
               {tabsData.map((tab, index) => (
                 <CustomTabPanel key={index} value={value} index={index}>
                   <Swiper spaceBetween={50}   modules={[Autoplay]}  autoplay={{
-                delay: 3000,
+                delay: 4000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
               }}   slidesPerView={3} loop={true} breakpoints={{
